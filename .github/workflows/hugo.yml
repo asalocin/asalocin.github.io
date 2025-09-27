@@ -34,8 +34,9 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install PostCSS + Autoprefixer
-        run: npm install -g postcss postcss-cli autoprefixer
+      - name: Install PostCSS dependencies
+        run: |
+          npm install postcss postcss-cli autoprefixer
 
       - name: Install Dart Sass
         run: sudo snap install dart-sass
@@ -55,3 +56,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
