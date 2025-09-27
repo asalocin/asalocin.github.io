@@ -4,3 +4,4 @@ _site/
 .stack-work/
 *.hi
 *.o
+".hugo_build.lock" 
