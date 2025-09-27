@@ -1,4 +1,5 @@
 ---
+draft: false
 title: "How to Read a Poem: And Fall in Love with Poetry"
 author: "Edward Hirsch"
 status: "now"            # now | finished | queue
