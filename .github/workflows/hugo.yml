@@ -36,7 +36,7 @@ jobs:
 
       - name: Install PostCSS dependencies
         run: |
-          npm install postcss postcss-cli autoprefixer
+          npm install postcss postcss-cli autoprefixer postcss-import
 
       - name: Install Dart Sass
         run: sudo snap install dart-sass
@@ -56,4 +56,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
 
