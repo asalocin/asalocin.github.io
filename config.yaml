@@ -1,7 +1,9 @@
 baseURL: "https://asalocin.github.io/"
 title: "salocin — notebook"
 theme: "hugo-texify3"
-paginate: 10
+pagination:
+  pagerSize: 10
+
 
 menu:
   main:
@@ -45,3 +47,4 @@ markup:
       unsafe: true
   highlight:
     noClasses: false
+
