@@ -1,8 +1,14 @@
 {{- $p := . -}}
+{{- $raw := $p.Params.status | default "unknown" -}}
+{{- $status :=
+    cond (eq $raw "now") "in-progress"
+      (cond (eq $raw "finished") "completed"
+        (cond (eq $raw "queue") "wishlist" $raw)) -}}
+
 <article class="read-card"
   data-title="{{ $p.Title | urlize }}"
   data-author="{{ $p.Params.author | default "" | urlize }}"
-  data-status="{{ $p.Params.status | default "unknown" }}">
+  data-status="{{ $status }}">
   {{ with $p.Params.cover }}
     <img class="read-cover" src="{{ . }}" alt="Cover: {{ $p.Title }}">
   {{ else }}
@@ -16,10 +22,12 @@
     {{ end }}
 
     <div class="read-meta">
-      {{ with $p.Params.status }}<span>Estado: {{ . }}</span>{{ end }}
-      {{ with $p.Date }}<span>{{ .Format "02 Jan 2006" }}</span>{{ end }}
-      {{ with $p.Params.finished }}<span>Fin: {{ . }}</span>{{ end }}
-      {{ with $p.Params.rating }}<span>★ {{ . }}/5</span>{{ end }}
+      <span>Estado: {{ $raw }}</span>
+      {{ with $p.Params.started }}<span>Inicio: {{ . }}</span>{{ end }}
+      {{ with $p.Params.published }}<span>Publicado: {{ . }}</span>{{ end }}
+      {{ with $p.Params.publisher }}<span>{{ . }}</span>{{ end }}
+      {{ with $p.Params.pages }}<span>{{ . }} pp.</span>{{ end }}
+      {{ with $p.Params.language }}<span>{{ . }}</span>{{ end }}
     </div>
 
     {{ with $p.Params.progress }}
