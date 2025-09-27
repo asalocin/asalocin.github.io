@@ -22,7 +22,7 @@
     <p><em>Nothing open right now.</em></p>
   {{ end }}
 
-  <!-- FINISHED (star-sorted) -->
+  <!-- FINISHED -->
   <h2 id="finished">✅ Finished</h2>
   {{ $fin := where $pages "Params.status" "finished" }}
   {{ if gt (len $fin) 0 }}
