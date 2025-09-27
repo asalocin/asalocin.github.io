@@ -6,7 +6,7 @@ editor: "Jerome Loving"
 status: "in-progress"            # queue | in-progress | finished
 progress: 0
 published: 2008-11-13
-cover: "/images/books/whitman.png"
+cover: "static/images/books/whitman-leaves-of-grass.png"
 publisher: "Oxford University Press"
 pages: 502
 language: "English"
