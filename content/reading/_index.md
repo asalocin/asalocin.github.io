@@ -1,11 +1,8 @@
 ---
 title: "Reading"
-draft: false
-
+summary: "Mi bitácora de lecturas."
+description: "Lo que leo, lo que terminé, y lo que quiero leer."
+# Opcional: orden por fecha
+# weight: 10
 ---
-
-Welcome to my **Reading Atlas** — a living shelf (what’s open now), a star-sorted log (what I finished), a timeline, and tags/authors for wandering.
-
-- [Now](#now) · [Finished](#finished) · [Timeline](#timeline) · [Tags](#tags)
-
 
