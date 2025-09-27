@@ -14,6 +14,6 @@ tags: ["poetry", "literary criticism"]
 summary: "Warm, lucid guidance on how to experience poems—equal parts invitation and toolkit."
 cover: "/images/books/hirsch-how-to-read-a-poem.png"  # optional
 ---
-**Why now.** Recommended by Adam Walker from Close Reading Channel. Interested on it, althought the title sounds like an editor's idea for selling a best seller. We'll see.
 
-**Notes.**
+
+Recommended by Adam Walker from Close Reading Channel. Interested on it, althought the title sounds like an editor's idea for selling a best seller. We'll see.
