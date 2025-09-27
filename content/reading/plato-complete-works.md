@@ -1,13 +1,19 @@
 ---
+draft: false
 title: "Plato: Complete Works"
 author: "Plato"
-editor: "John M. Cooper"
-status: "queue"          # change to "now" when you start
-tags: ["philosophy", "classics", "greek"]
-summary: "Single-volume edition of the entire surviving corpus in contemporary translations, with concise intros and thorough annotation."
-cover: "/images/books/plato-complete-works.jpg"        # optional
+editor: "John M. Cooper, D. S. Hutchinson"
+status: "queue"             # queue | in-progress | finished
+progress: 0
+published: 1997-12-01
+publisher: "Hackett Publishing"
+pages: 1808
+language: "English"
+isbn: "0872203492"
+tags: ["philosophy", "classics", "plato"]
+summary: "The first single edition to include the entire surviving corpus attributed to Plato in antiquity. Featuring outstanding translations by leading scholars, with introductions, annotations, and a comprehensive index."
+cover: "/images/books/plato-complete-works.jpg"
 ---
+**Why this edition.** A definitive reference edition—ideal for systematic study of Plato, with scholarly apparatus and introductions to each dialogue.
 
-Outstanding translations by leading contemporary scholars—many commissioned for this volume—collected into the first single edition of the complete works attributed to Plato in antiquity. Cooper’s introductory essay explains chronology, the dialogue form, and how to approach the corpus; each translation has a concise preface and meticulous notes.
-
-**Plan.** Reading at least 5p. a day. More if I want. `/notes/`.
+**Notes.** To be used both as a reading project and as a reference for individual dialogues.
