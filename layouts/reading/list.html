@@ -97,8 +97,32 @@
 .bucket h2 { font-size: 1.2rem; margin-bottom: .75rem; }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: .9rem; }
 
-.read-card { border: 1px solid var(--border, rgba(127,127,127,.25)); border-radius: .9rem; padding: .8rem; display: grid; grid-template-columns: 72px 1fr; gap: .75rem; align-items: start; }
-.read-cover { width: 72px; height: 104px; border-radius: .5rem; object-fit: cover; background: rgba(127,127,127,.1); }
+.read-card {
+  border: 1px solid var(--border, rgba(127,127,127,.25));
+  border-radius: .9rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cover-wrapper {
+  margin-bottom: .8rem;
+}
+
+.read-cover {
+  width: 120px;
+  height: auto;
+  border-radius: .5rem;
+  object-fit: cover;
+  background: rgba(127,127,127,.1);
+}
+
+.read-content {
+  width: 100%;
+}
+
 .read-title { margin: 0; font-size: 1rem; line-height: 1.2; }
 .read-author { opacity: .75; font-size: .95rem; margin-top: .2rem; }
 .read-meta { display: flex; gap: .5rem; flex-wrap: wrap; opacity: .7; font-size: .85rem; margin-top: .35rem; }
