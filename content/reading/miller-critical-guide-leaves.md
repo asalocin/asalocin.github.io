@@ -2,7 +2,7 @@
 draft: false
 title: "A Critical Guide to Leaves of Grass (Phoenix Books)"
 author: "James Edwin Miller"
-status: "queue"             # queue | in-progress | finished
+status: "in-progress"             # queue | in-progress | finished
 progress: 0
 published: 1966-01-01
 publisher: "University of Chicago Press (Phoenix Books)"
