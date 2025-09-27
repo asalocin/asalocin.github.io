@@ -9,13 +9,16 @@
   data-title="{{ $p.Title | urlize }}"
   data-author="{{ $p.Params.author | default "" | urlize }}"
   data-status="{{ $status }}">
-  {{ with $p.Params.cover }}
-    <img class="read-cover" src="{{ . }}" alt="Cover: {{ $p.Title }}">
-  {{ else }}
-    <div class="read-cover" aria-hidden="true"></div>
-  {{ end }}
 
-  <div>
+  <div class="cover-wrapper">
+    {{ with $p.Params.cover }}
+      <img class="read-cover" src="{{ . }}" alt="Cover: {{ $p.Title }}">
+    {{ else }}
+      <div class="read-cover" aria-hidden="true"></div>
+    {{ end }}
+  </div>
+
+  <div class="read-content">
     <h3 class="read-title"><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h3>
     {{ with $p.Params.author }}
       <div class="read-author">{{ . }}</div>
@@ -37,3 +40,4 @@
     {{ end }}
   </div>
 </article>
+
