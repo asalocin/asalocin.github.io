@@ -36,7 +36,7 @@ params:
   enableCodeCopy: true
   mermaid: true
   buymeacoffee: ""   # ⬅️ add this
-
+  footer: "Built by Nicolás A. , © 2025"
 
 permalinks:
   notes: "/notes/:slug/"
@@ -50,6 +50,7 @@ markup:
       unsafe: true
   highlight:
     noClasses: false
+
 
 
 
