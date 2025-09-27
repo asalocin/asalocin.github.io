@@ -1,7 +1,8 @@
 ---
+draft: false
 title: "How to Read a Poem: And Fall in Love with Poetry"
 author: "Edward Hirsch"
-status: "now"            # now | finished | queue
+status: "in-progress"            # now | finished | queue
 progress: 10             # tweak anytime (0–100)
 started: 2025-09-27
 publisher: "Houghton Mifflin Harcourt"
