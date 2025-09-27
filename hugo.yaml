@@ -1,0 +1,65 @@
+baseURL: "https://asalocin.github.io/"
+title: "salocin — notebook"
+theme: "hugo-texify3"
+# If you move to Hugo Modules later, replace the theme key with module.imports
+
+
+paginate: 10
+
+
+# Menus for top nav
+menu:
+main:
+- name: Home
+url: /
+weight: 1
+- name: Reading
+url: /reading/
+weight: 2
+- name: Notes
+url: /notes/
+weight: 3
+- name: Trips
+url: /trips/
+weight: 4
+- name: Blog
+url: /blog/
+weight: 5
+- name: Poems
+url: /poems/
+weight: 6
+
+
+# TeXify3 params (see theme docs for more)
+params:
+author: "salocin"
+description: "Essays, notes, and experiments in public."
+toc: true # auto table of contents on pages
+math: true # KaTeX for formulas
+darkMode: true # dark/light toggle
+enableCodeCopy: true
+mermaid: true
+# search: "duckduckgo" # optional: site search via DDG
+
+
+# Permalinks
+permalinks:
+notes: "/notes/:slug/"
+trips: "/trips/:slug/"
+blog: "/blog/:year-:month-:slug/"
+poems: "/poems/:slug/"
+
+
+# Taxonomies (optional)
+taxonomies:
+tag: tags
+category: categories
+
+
+# Build/markup options (safe defaults)
+markup:
+goldmark:
+renderer:
+unsafe: true # allow raw HTML in Markdown (lets you use sidenotes/HTML blocks)
+highlight:
+noClasses: false # let theme CSS style code blocks
