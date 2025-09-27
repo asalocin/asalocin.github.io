@@ -27,6 +27,7 @@ menu:
       weight: 6
 
 params:
+  title: "Salocin"
   author: "salocin"
   description: "Essays, notes, and experiments in public."
   toc: true
@@ -34,6 +35,7 @@ params:
   darkMode: true
   enableCodeCopy: true
   mermaid: true
+
 
 permalinks:
   notes: "/notes/:slug/"
@@ -47,4 +49,5 @@ markup:
       unsafe: true
   highlight:
     noClasses: false
+
 
