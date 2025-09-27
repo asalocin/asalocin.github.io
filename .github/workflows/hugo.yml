@@ -21,13 +21,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: true  # fetch the TeXify3 theme
+          submodules: true
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: 'latest'
           extended: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install PostCSS + Autoprefixer
+        run: npm install -g postcss postcss-cli autoprefixer
 
       - name: Install Dart Sass
         run: sudo snap install dart-sass
@@ -40,7 +48,6 @@ jobs:
         with:
           path: ./public
 
-
   deploy:
     runs-on: ubuntu-latest
     needs: build
@@ -48,4 +55,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
