@@ -1,0 +1,31 @@
+{{- $p := . -}}
+<article class="read-card"
+  data-title="{{ $p.Title | urlize }}"
+  data-author="{{ $p.Params.author | default "" | urlize }}"
+  data-status="{{ $p.Params.status | default "unknown" }}">
+  {{ with $p.Params.cover }}
+    <img class="read-cover" src="{{ . }}" alt="Cover: {{ $p.Title }}">
+  {{ else }}
+    <div class="read-cover" aria-hidden="true"></div>
+  {{ end }}
+
+  <div>
+    <h3 class="read-title"><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h3>
+    {{ with $p.Params.author }}
+      <div class="read-author">{{ . }}</div>
+    {{ end }}
+
+    <div class="read-meta">
+      {{ with $p.Params.status }}<span>Estado: {{ . }}</span>{{ end }}
+      {{ with $p.Date }}<span>{{ .Format "02 Jan 2006" }}</span>{{ end }}
+      {{ with $p.Params.finished }}<span>Fin: {{ . }}</span>{{ end }}
+      {{ with $p.Params.rating }}<span>★ {{ . }}/5</span>{{ end }}
+    </div>
+
+    {{ with $p.Params.progress }}
+      <div class="read-progress" style="--p: {{ . }}%;">
+        <span></span>
+      </div>
+    {{ end }}
+  </div>
+</article>
