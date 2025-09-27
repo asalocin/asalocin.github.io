@@ -35,7 +35,8 @@ params:
   darkMode: true
   enableCodeCopy: true
   mermaid: true
-  buymeacoffee: ""   # ⬅️ add this
+  buymeacoffee:
+    code: ""    # leave empty, disables the button
   footer: "Built by Nicolás A. , © 2025"
 
 permalinks:
@@ -50,6 +51,7 @@ markup:
       unsafe: true
   highlight:
     noClasses: false
+
 
 
 
