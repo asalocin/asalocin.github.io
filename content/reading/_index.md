@@ -1,40 +1,7 @@
 ---
-
-title: "Reading"
-
-description: "A living log of what I’m reading."
-
+title: "Reading Atlas"
 ---
 
+Welcome to my **Reading Atlas** — a living shelf (what’s open now), a star-sorted log (what I finished), a timeline, and tags/authors for wandering.
 
-
-
-
-\# Reading
-
-\*A living log with quick notes. Move finished items to the next section.\*
-
-
-
-
-
-\## Currently
-
-\- \*Example Book Title\* — started \*\*2025-09-20\*\*. Intent: one‑line purpose for reading.
-
-
-
-
-
-\## Finished
-
-\- \*Some Finished Book\* — \*\*2025-08-11 → 2025-09-03\*\*. Verdict: worth it for chapters 2–3.
-
-
-
-
-
-\## Up next
-
-\- \*Queued Title\* — why it’s in the queue.
-
+- [Now](#now) · [Finished](#finished) · [Timeline](#timeline) · [Tags](#tags)
