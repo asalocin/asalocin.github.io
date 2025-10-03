@@ -1,2 +1,0 @@
-# Salocin.github.io
-Website
