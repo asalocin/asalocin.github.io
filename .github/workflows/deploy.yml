@@ -2,16 +2,18 @@ name: Deploy Hugo site to GitHub Pages
 
 on:
   push:
-    branches: [ "main" ]   # cada vez que subas a main
+    branches: [ "main" ]
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write   # << necesario para que github-actions[bot] pueda pushear
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: true   # importante porque hugo-book es un submódulo
+          submodules: true
           fetch-depth: 0
 
       - name: Setup Hugo
