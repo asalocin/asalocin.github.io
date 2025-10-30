@@ -12,7 +12,7 @@ description: >- # Esto significa que puedes escribir en múltiples líneas
 # --- Configuración de Build ---
 # Aquí "instalamos" Minima. 
 # GitHub Pages lo entenderá y lo usará para construir tu sitio.
-theme: jekyll-theme-minima
+theme: minima
 
 # Minima usa estos plugins para cosas útiles (SEO, feeds)
 plugins:
