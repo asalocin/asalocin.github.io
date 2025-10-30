@@ -1,0 +1,32 @@
+# -----------------------------------------------------------------------------
+# BIENVENIDO A JEKYLL!
+# Este es el cerebro de tu sitio.
+# -----------------------------------------------------------------------------
+
+# --- Información del Sitio ---
+title: El Archivo de Salocin
+description: >- # Esto significa que puedes escribir en múltiples líneas
+  Un repositorio de escritos, memorias e impresiones. 
+  Proyecto en evolución.
+
+# --- Configuración de Build ---
+# Aquí "instalamos" Minima. 
+# GitHub Pages lo entenderá y lo usará para construir tu sitio.
+theme: jekyll-theme-minima
+
+# Minima usa estos plugins para cosas útiles (SEO, feeds)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# --- Opcional pero recomendado (Minima los usa) ---
+# Descomenta y rellena esto cuando quieras
+# author: 
+#   name: Salocin
+
+# github_username: asalocin # Tu usuario de GitHub
+# twitter_username: tu_usuario_twitter # Si tienes
+
+# -----------------------------------------------------------------------------
+# FIN DE LA CONFIGURACIÓN
+# -----------------------------------------------------------------------------
