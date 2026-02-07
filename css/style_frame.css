@@ -1,0 +1,68 @@
+/* Html Elements */
+html { 
+  font: normal 13px "Trebuchet MS", Verdana, "Lucida Grande", Georgia, Sans-Serif;
+  text-align:justify;
+}
+
+a { 
+    color: #2578EC;
+    font-weight: bold; 
+    text-decoration:none;
+}
+
+h1, h2, h3 { 
+    font-weight: normal; 
+    margin: 5px 0 10px; 
+    padding: 0; 
+}
+
+h1 a, h2 a, h3 a { 
+    font-weight: normal; 
+    border-bottom-width: 0; 
+}
+
+h1 { 
+    text-align: center;
+    color: white;
+    background: #696565;
+    font-size: 20px;  
+}
+
+h2 { 
+    color: #696565;
+    font-size: 20px; 
+}
+
+h3 { 
+    color: white;
+    background: #696565;
+    text-align: center;
+    font-size: 10px; 
+    margin-right: 15px;
+}
+
+table {
+    width: 100%; 
+    text-align: center;
+    border-collapse: collapse; 
+}
+
+td {
+    font: normal 13px "Trebuchet MS", Verdana, "Lucida Grande", Georgia, Sans-Serif;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+
+li {
+    text-align: justify;
+}
+
+table#barra a{
+    color: white;
+}
+
+table#tablas td{
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
