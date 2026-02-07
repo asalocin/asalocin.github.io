@@ -1,0 +1,288 @@
+/*
+This is the main CSS file for my webpage
+*/
+
+
+/* Html Elements */
+html { 
+    background-color: #EBEBEB; 
+    border-top: 10px solid #696565; 
+    font: normal 12px "Trebuchet MS", Verdana, "Lucida Grande", Georgia, Sans-Serif;  
+}
+
+body { 
+    padding: 0; 
+    width: 900px; 
+    margin: 0 auto; 
+    background-repeat: repeat-y; 
+    background-position: top left; 
+    background-image: url(../img/body_lr.png); 
+}
+
+a { 
+    color: #696565;
+    font-weight: bold; 
+    text-decoration:none;
+}
+
+h1, h2{ 
+    font-weight: normal; 
+    margin: 5px 0 10px; 
+    padding: 0; 
+}
+
+h1 a, h2 a{ 
+    font-weight: normal; 
+    border-bottom-width: 0; 
+}
+
+
+/* Container */
+#container {
+/*    background-image: url(../img/bg.png); */
+    width: 800px;
+    margin: 0 auto; 
+}
+
+/* Header */
+#header { 
+    float: left; 
+    width: 90%; 
+    height: 2px;
+    clear: both;
+    margin-left: 4%; 
+    margin-top: 5%;  
+}
+
+#header h1 { 
+    float: left; 
+    width: 25%; 
+    margin: 4px 0; 
+    font: bold;
+    color: #000;
+    font-size: 16px; 
+    text-transform: uppercase; 
+    letter-spacing: 0.1em;   
+}
+
+#header h2 { 
+    float: left; 
+    width: 73%; 
+    font: bold;
+    font-size: 13px;
+    line-height: 1.5em; 
+    border-left: 2px solid #4E4A4A;   
+}
+
+
+/* Slider */
+#slider { 
+    float: left; 
+    width: 100%; 
+    clear: both; 
+}
+
+div.wrap {
+    width : 92%;
+    height : 240px;
+    margin : 0 auto;
+    text-align : left;
+}
+
+#slide-holder {
+    z-index : 40;
+    width : 740px;
+    height : 200px;
+    position : absolute;
+}
+
+#slide-holder #slide-runner {
+    width : 740px;
+    height : 200px;
+    overflow : hidden;
+    position : absolute;
+}
+
+#slide-holder img {
+    margin : 0;
+    display : none;
+    position : absolute;
+}
+
+#slide-holder #slide-controls {
+    left : 0;
+    bottom : 165px;
+    width : 745px;
+    height : 40px;
+    display : none;
+    position : absolute;
+    background : url(../img/slide-bg.png) 0 0;
+}
+
+#slide-holder #slide-controls p.text {
+    float : left;
+    color : white;
+    display : inline;
+    font-size : 10px;
+    line-height : 16px;
+    margin : 15px 0 0 20px;
+    text-transform : uppercase;
+}
+
+#slide-holder #slide-controls p#slide-nav {
+    float : right;
+    height : 24px;
+    display : inline;
+    margin : 11px 15px 0 0;
+}
+
+#slide-holder #slide-controls p#slide-nav a {
+    float : left;
+    width : 24px;
+    height : 24px;
+    display : inline;
+    font-size : 11px;
+    margin : 0 5px 0 0;
+    line-height : 24px;
+    font-weight : bold;
+    text-align : center;
+    text-decoration : none;
+    background-position : 0 0;
+    background-repeat : no-repeat;
+}
+#slide-holder #slide-controls p#slide-nav a.on {
+    background-position : 0 -24px;
+}
+
+#slide-holder #slide-controls p#slide-nav a {
+    background-image : url(../img/silde-nav.png);
+    color: white;
+}
+
+
+/* Navigation */
+
+#navigation-sup {
+    float: left; 
+    width: 92.5%;
+    clear: both; 
+    padding-left: 32px; 
+    margin-top: 4%;
+    font: normal 12px "Trebuchet MS", Verdana, "Lucida Grande", Georgia, Sans-Serif; 
+} 
+
+
+#navigation-sup ul
+{
+	padding: 0;
+	width: 100%;
+    height: 36px;
+	float: left;
+	margin: 0 0 10px;
+	list-style-type: none;
+	background-color: #696565;
+}
+
+#navigation-sup a:link,
+#navigation-sup a:visited
+{
+	float: left;
+	display: block;
+	color: #eff8ff;
+	padding: 10px 18px;
+	border-bottom-width: 0;
+}
+
+#navigation-sup li a {
+    text-align: center;  
+    background: #696565;
+    color: white;
+    display: block;
+    padding: 10px 18px;
+}
+
+#navigation-sup li a:hover,
+#navigation-sup a:active {
+    background: #4E4A4A;
+}
+
+li#lihome a{
+    background-color: #4E4A4A;
+}
+
+/* Navigation-inf */
+
+#navigation-inf {
+    float: left; 
+    clear: both; 
+    padding-left: 26px; 
+    margin-top: -4%;
+    font: normal 12px "Trebuchet MS", Verdana, "Lucida Grande", Georgia, Sans-Serif; 
+}  
+
+* {
+    list-style:none;
+    text-decoration:none;
+    margin:0;
+    padding:0;
+}
+
+.nav-inf > li {
+    float:left;
+}
+
+.nav-inf li a {
+    text-align: center;  
+    background: #696565;
+    color: white;
+    display: block;
+    padding: 10px 19px;
+}
+
+.nav-inf li a:not(:last-child) .flecha {
+    display: inline;
+}
+
+.nav-inf li a:hover {
+    background: #4E4A4A;
+}
+
+.nav-inf li {
+    position: relative;
+    padding: 4px 6.3px;
+}
+
+.nav-inf li ul {
+    display: none;
+    position: absolute;
+    min-width: 150px;
+    margin-left: -5%;
+}
+
+.nav-inf li:hover > ul {
+    display: block;
+}
+
+.nav-inf li ul li ul {
+    right:-350px;
+}
+
+
+/* Content */
+#content { 
+    margin-left: 3%;
+    margin-top: 3%;
+    float: left; 
+    width: 94.4%;
+    clear: both; 
+}
+
+
+/* Footer */
+#footer { 
+    border-top: 1px solid #4E4A4A;   
+    width: 90%;
+    clear: both; 
+    padding: 20px 0 40px;
+    text-align: center; 
+}
