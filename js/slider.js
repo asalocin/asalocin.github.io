@@ -1,8 +1,6 @@
-
-window.onerror=function(desc,page,line,chr){}
-
+/* Slider script (legacy jQuery). Lightly patched for safety (no hard dependency on SI.*). */
 $(function(){
- SI.Files.stylizeAll();
+ if(window.SI && SI.Files && SI.Files.stylizeAll){ SI.Files.stylizeAll(); }
  slider.init();
 
  $('input.text-default').each(function(){
@@ -28,6 +26,8 @@ var slider={
  al:null,
  at:10*800,
  ar:true,
+ w:1000,
+
  init:function(){
   if(!slider.data || !slider.data.length)
    return false;
@@ -35,8 +35,13 @@ var slider={
   var d=slider.data;
   slider.num=d.length;
   var pos=Math.floor(Math.random()*1);//slider.num);
+  var w=$('#slide-runner').width();
+  if(!w || w<300) w=$('#slide-holder').width();
+  if(!w || w<300) w=740;
+  slider.w=w;
+
   for(var i=0;i<slider.num;i++){
-   $('#'+d[i].id).css({left:((i-pos)*1000)});
+   $('#'+d[i].id).css({left:((i-pos)*slider.w)});
    $('#slide-nav').append('<a id="slide-link-'+i+'" href="#" onclick="slider.slide('+i+');return false;" onfocus="this.blur();">'+(i+1)+'</a>');
   }
 
@@ -63,7 +68,7 @@ var slider={
 
   var d=slider.data;
   for(var i=0;i<slider.num;i++)
-   $('#'+d[i].id).stop().animate({left:((i-pos)*1000)},1000,'swing');
+   $('#'+d[i].id).stop().animate({left:((i-pos)*slider.w)},1000,'swing');
   
   slider.on(pos);
   slider.text(d[pos]);
