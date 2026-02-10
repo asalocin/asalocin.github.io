@@ -1,22 +1,58 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nicolás Aguilar — Favorite YouTube Videos</title>
+  <title>Nicolás Aguilar — Under Construction</title>
   <link rel="stylesheet" href="../css/style_frame.css" type="text/css" />
+
+  <style>
+    .uc { text-align: center; margin-top: 1.25rem; }
+    .uc-img{
+      display:block;
+      width:100%;
+      max-width: 720px;
+      height:auto;
+      margin: 1rem auto 0;
+    }
+    .uc-note{ opacity:.8; margin-top:.75rem; }
+  </style>
 </head>
 <body>
   <div class="page">
     <p class="kicker">Miscellaneous</p>
-<h1>Favorite YouTube Videos</h1>
-    <p class="lede">A small playlist of videos I genuinely return to.</p>
+    <h1>Favorite YouTube Videos</h1>
+    <p class="lede">Under construction.</p>
 
-<h2>Playlist</h2>
-<ul class="linklist">
-  <li><span class="small">Coming soon:</span> music performances, lectures, and oddities.</li>
-</ul>
-
+    <section class="uc" aria-label="Under construction">
+      <img class="uc-img" data-uc-file="uncon.png" alt="Under construction" />
+      <p class="small uc-note">This section is being built.</p>
+    </section>
   </div>
+
+  <script>
+    (function () {
+      const imgs = document.querySelectorAll("img[data-uc-file]");
+      imgs.forEach(img => {
+        const file = img.getAttribute("data-uc-file") || "uncon.png";
+        const candidates = [
+          `/img/${file}`,
+          `img/${file}`,
+          `../img/${file}`,
+          `../../img/${file}`,
+          `../../../img/${file}`,
+        ];
+
+        let i = 0;
+        function tryNext() {
+          if (i >= candidates.length) return;
+          img.src = candidates[i++];
+        }
+
+        img.addEventListener("error", tryNext);
+        tryNext();
+      });
+    })();
+  </script>
 </body>
 </html>
