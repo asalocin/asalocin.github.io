@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Guillermo de Poitiers — Haré una poesía sobre absolutamente nada</title>
+  <link rel="stylesheet" href="../../css/style_frame.css" type="text/css" />
+
+  <style>
+    /* Estilos locales */
+    .meta-row{ display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin: 6px 0 0; }
+    .controls{ display:flex; flex-wrap:wrap; gap:8px; }
+    .btn{
+      appearance: none;
+      border: 1px solid rgba(23,20,15,0.22);
+      background: rgba(255,255,255,0.55);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-family: var(--font-ui);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(23,20,15,0.78);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn:hover{ border-color: rgba(23,20,15,0.35); }
+    .btn:active{ transform: translateY(1px); }
+    .btn.is-active{
+      border-color: rgba(23,20,15,0.42);
+      box-shadow: inset 0 0 0 1px rgba(23,20,15,0.12);
+    }
+
+    .poem-block{ margin-top: 12px; }
+    
+    /* FIX: El contenedor base ya no tiene pre-wrap para evitar espacios fantasmas */
+    .poem-body{ max-width: var(--measure); }
+
+    /* Control exacto de la distancia entre estrofas */
+    .poem-body .stanza{ margin-bottom: 24px; }
+
+    .stanza-num{
+      font-family: var(--font-ui);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(23,20,15,0.60);
+      margin-bottom: 4px;
+    }
+
+    /* El pre-wrap se queda solo aquí para respetar los versos del poema */
+    .poem-lines{ 
+      margin: 0; 
+      white-space: pre-wrap; 
+    }
+
+    .lang{ display: none; }
+    .lang.is-visible{ display: block; }
+
+    .author-figure{ margin: 0 0 10px; max-width: 260px; }
+.author-figure img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  border: 1px solid rgba(23,20,15,0.14);
+}
+.author-figure figcaption{ margin-top: 6px; opacity: 0.85; }
+
+
+    .credit{ margin-top: 14px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <p class="kicker"><a href="../misc_poetry_anthology.html">Personal Anthology of Poetry</a></p>
+    <h1>Haré una poesía sobre absolutamente nada</h1>
+    <p class="lede">
+      Guillermo de Poitiers (1071–1126). (<span class="mono">Farai un vers de dreit nien</span>).
+    </p>
+
+    <div class="meta-row" aria-label="Entry tags">
+      <span class="badge">XI–XII c.</span>
+      <span class="badge">troubadour</span>
+      <span class="badge">bilingual text</span>
+      <span class="badge">Classics</span>
+    </div>
+
+    <div class="two-col">
+      <aside class="side">
+        <div class="card">
+          <figure class="author-figure">
+  <img src="authors/guille.jpg" alt="Guillermo de Poitiers — imagen referencial" loading="lazy">
+  <figcaption class="small">Guillermo de Poitiers (1071–1126)</figcaption>
+</figure>
+
+<div class="hr"></div>
+
+          <h2>Controls</h2>
+          <p class="small">Selecciona un idioma:</p>
+          <div class="controls" role="tablist" aria-label="Language toggle">
+            <button class="btn is-active" id="btn-es" type="button" role="tab" aria-selected="true">ES (traducción)</button>
+            <button class="btn" id="btn-oc" type="button" role="tab" aria-selected="false">OG</button>
+          </div>
+          <div class="hr"></div>
+          <h2>Navigation</h2>
+          <p class="small"><a class="btn" href="../misc_poetry_anthology.html">← Back to anthology</a></p>
+          <p class="small"><a class="btn" href="../Poetry.html">Poetry (Writings)</a></p>
+          <div class="hr"></div>
+          <h2>Azar:</h2>
+          <p class="small">Para ir a una página aleatoria, pinche aquí:</p>
+          <button class="btn" id="btn-random" type="button">Surprise me</button>
+        </div>
+      </aside>
+
+      <main class="main">
+        <section class="card poem-block">
+          <h2>Poema:</h2>
+          <p class="small" style="margin-top:0;">
+      
+          </p>
+
+          <div class="lang is-visible" id="lang-es" role="tabpanel" aria-labelledby="btn-es">
+            <div class="poem-body">
+              <div class="stanza">
+                <div class="stanza-num">I</div>
+                <div class="poem-lines">Haré una poesía sobre absolutamente nada:
+no tratará de mí ni de otra gente;
+no tratará de amor ni de juventud,
+ni de ninguna otra cosa,
+habrá sido compuesta mientras dormía,
+sobre un caballo.</div>
+              </div>
+
+              <div class="stanza">
+                <div class="stanza-num">II</div>
+                <div class="poem-lines">Ignoro la hora en que nací,
+no estoy alegre ni triste,
+no soy huraño ni agradable
+y no puedo ser de otro modo,
+así fui marcado por la noche
+en una alta montaña.</div>
+              </div>
+
+              <div class="stanza">
+                <div class="stanza-num">III</div>
+                <div class="poem-lines">Ignoro cuándo estoy dormido
+y cuándo estoy despierto si no me lo dicen;
+por poco se me parte el corazón
+por una pena de amor;
+no doy por eso el precio de una hormiga,
+¡por San Marcial!</div>
+              </div>
+
+              <div class="stanza">
+                <div class="stanza-num">IV</div>
+                <div class="poem-lines">Estoy enfermo y creo morir;
+no sé nada más que lo que oigo decir.
+Buscaré médico según mi deseo,
+pero no conozco ninguno que me valga;
+será buen médico si me puede curar,
+pero no lo será si empeoro.</div>
+              </div>
+
+              <div class="stanza">
+                <div class="stanza-num">V</div>
+                <div class="poem-lines">Tengo amiga, no sé quién es,
+nunca la vi, por mi fe,
+ni hizo nada que me agradara o pesase
+y no me preocupa:
+nunca hubo abundancia
+en mi casa.</div>
+              </div>
+
+              <div class="stanza">
+                <div class="stanza-num">VI</div>
+                <div class="poem-lines">Nunca la vi y la amo mucho;
+nunca obtuve de ella favor ni me ofendió;
+cuando no la veo, poco me importa,
+no la precio un gallo
+pues sé de una más gentil y más hermosa
+y que vale más.</div>
+              </div>
+
+              <div class="stanza">
+                <div class="stanza-num">VII</div>
+                <div class="poem-lines">Ignoro dónde vive,
+si en la montaña o en el llano;
+no oso decir lo injusta que es conmigo
+sino que me callo;
+me pesa que se quede aquí,
+por eso me voy.</div>
+              </div>
+
+              <div class="stanza">
+                <div class="stanza-num">VIII</div>
+                <div class="poem-lines">Ya he hecho la poesía de no sé qué;
+la enviaré a aquel
+que por medio de otro la transmitirá
+al Peitieu
+para que mi dama me envíe la contrallave
+de su estuche.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lang" id="lang-oc" role="tabpanel" aria-labelledby="btn-oc">
+            <div class="poem-body">
+              <div class="stanza">
+                <div class="stanza-num">I</div>
+                <div class="poem-lines">Farai un vers de dreit nien:
+non er de mi ni d’autra gen,
+non er d’amor ni de joven,
+           ni de ren au,
+qu’enans fo trobatz en durmen
+          sus un chivau.</div>
+              </div>
+
+              <div class="stanza">
+                <div class="stanza-num">II</div>
+                <div class="poem-lines">No sai en qual hora·m fui natz,
+no soi alegres ni iratz,
+no soi estranhs ni soi privatz,
+          ni no·n puesc au,
+qu’enaisi fui de nueitz fadatz
+          sobr’un pueg au.</div>
+              </div>
+
+              <div class="stanza">
+                <div class="stanza-num">III</div>
+                <div class="poem-lines">No sai cora·m sui endormitz,
+ni cora·m veill, s’om no m’o ditz;
+per pauc no m’es lo cor partitz
+          d’un dol corau;
+e no m’o pretz una fromitz,
+          per Saint Marsau!</div>
+              </div>
+
+              <div class="stanza">
+                <div class="stanza-num">IV</div>
+                <div class="poem-lines">Malautz soi e cre mi morir;
+e re no sai mas quan n’aug dir,
+Metge querrai al mieu albir,
+          e no·m sai tau;
+bos metges er, si·m pot guerir,
+          mor non, si amau.</div>
+              </div>
+
+              <div class="stanza">
+                <div class="stanza-num">V</div>
+                <div class="poem-lines">Amigu’ai ieu, non sai qui s’es:
+c’anc no la vi, si m’aiut fes;
+ni·m fes que·m plassa ni que·m pes,
+          ni no m’en cau:
+c’anc non ac norman ni franses
+          dins mon ostau.</div>
+              </div>
+
+              <div class="stanza">
+                <div class="stanza-num">VI</div>
+                <div class="poem-lines">Anc no la vi et am la fort;
+anc no n’aic dreit ni no·m fes tort;
+quan no la vei, be m’en deport;
+          no·m prez un jau:
+qu’ien sai gensor e belazor,
+          e que mais vau.</div>
+              </div>
+
+              <div class="stanza">
+                <div class="stanza-num">VII</div>
+                <div class="poem-lines">No sai lo luec ves on s’esta,
+si es en pueg ho es en pla;
+non aus dire lo tort que m’a,
+          abans m’en cau;
+e peza·m be quar sai rema,
+          per aitan vau.</div>
+              </div>
+
+              <div class="stanza">
+                <div class="stanza-num">VIII</div>
+                <div class="poem-lines">Fait ai lo vers, no sai de cui;
+e trametrai lo a celui
+que lo·m trametra per autrui
+          enves Peitau,
+que·m tramezes del sieu estui
+          la contraclau.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hr"></div>
+          <p class="small credit">
+            <b>Credit / source note:</b>
+            Guillermo de Poitiers (1071–1126). Spanish translation: Carlos Alvar, 1981.
+          </p>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    var btnEs = document.getElementById("btn-es");
+    var btnOc = document.getElementById("btn-oc");
+    var langEs = document.getElementById("lang-es");
+    var langOc = document.getElementById("lang-oc");
+
+    function showLang(which){
+      if(which === "oc"){
+        langEs.classList.remove("is-visible");
+        langOc.classList.add("is-visible");
+        btnEs.classList.remove("is-active");
+        btnOc.classList.add("is-active");
+      }else{
+        langOc.classList.remove("is-visible");
+        langEs.classList.add("is-visible");
+        btnOc.classList.remove("is-active");
+        btnEs.classList.add("is-active");
+      }
+    }
+
+    btnEs.addEventListener("click", function(){ showLang("es"); });
+    btnOc.addEventListener("click", function(){ showLang("oc"); });
+
+    var btnRand = document.getElementById("btn-random");
+    if(btnRand){
+      btnRand.addEventListener("click", function(){
+        alert("This would link to another poem in your collection.");
+      });
+    }
+  </script>
+</body>
+</html>

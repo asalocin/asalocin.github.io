@@ -1,23 +1,354 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nicolás Aguilar — Personal Anthology of Poetry</title>
   <link rel="stylesheet" href="../css/style_frame.css" type="text/css" />
+
+  <style>
+    /* Page-local helpers (kept subtle; won’t fight the global aesthetic). */
+    .meta-row{ display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin: 6px 0 0; }
+    .toc a{ text-decoration: none; }
+    .toc a:hover{ text-decoration: underline; }
+
+    .shelf{ margin-top: 14px; }
+    .shelf-title{ margin-top: 0; }
+    .shelf-note{ margin-top: 6px; }
+
+    .poem-card h3{ margin-top: 0; }
+    .poem-card .small{ margin: 6px 0; }
+
+    .hint{
+  padding: 6px 10px;
+  border-left: 1px dashed rgba(23,20,15,0.18);
+  background: transparent;
+  opacity: 0.75;
+}
+
+
+    .btn{
+      appearance: none;
+      border: 1px solid rgba(23,20,15,0.22);
+      background: rgba(255,255,255,0.55);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-family: var(--font-ui);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(23,20,15,0.78);
+      cursor: pointer;
+    }
+    .btn:hover{ border-color: rgba(23,20,15,0.35); }
+    .btn:active{ transform: translateY(1px); }
+
+    /* Language toggling */
+    [data-lang]{ display: none; }
+    html[data-active-lang="es"] [data-lang="es"]{ display: initial; }
+    html[data-active-lang="en"] [data-lang="en"]{ display: initial; }
+
+    .lang-switch{ display:flex; gap:8px; justify-content:center; margin-top: 10px; }
+    .btn.active{
+      border-color: rgba(23,20,15,0.38);
+      background: rgba(255,255,255,0.78);
+      color: rgba(23,20,15,0.88);
+    }
+  </style>
 </head>
 <body>
   <div class="page">
-    <p class="kicker">Miscellaneous</p>
-<h1>Personal Anthology of Poetry</h1>
-    <p class="lede">Poems I love (and notes on why).</p>
+    <p class="kicker">
+      <span data-lang="es">Miscelánea</span>
+      <span data-lang="en">Miscellaneous</span>
+    </p>
 
-<h2>Anthology</h2>
-<ul class="linklist">
-  <li><span class="small">Coming soon:</span> favorites with author + source.</li>
-  <li><span class="small">Coming soon:</span> short personal notes and context.</li>
-</ul>
+    <h1>
+      <span data-lang="es">Antología Personal de Poesía</span>
+      <span data-lang="en">Personal Anthology of Poetry</span>
+    </h1>
 
+    <p class="lede">
+      <span data-lang="es">Mi pequeño derrotero en la www.</span>
+      <span data-lang="en">A small logbook on the www.</span>
+    </p>
+
+    <div class="meta-row" aria-label="Page tags">
+      <span class="badge">anthology</span>
+      <span class="badge">poetry</span>
+      <span class="badge">bilingual</span>
+      <span class="badge">notes</span>
+    </div>
+
+    <!-- Language switch -->
+    <div class="lang-switch" aria-label="Language">
+      <button class="btn" id="btn-es" type="button">ES</button>
+      <button class="btn" id="btn-en" type="button">EN</button>
+    </div>
+
+    <div class="two-col">
+      <aside class="side">
+        <div class="card">
+          <h2 class="shelf-title">
+            <span data-lang="es">¿Por qué una antología personal?</span>
+            <span data-lang="en">Why a personal anthology?</span>
+          </h2>
+
+          <p class="small">
+            <span data-lang="es">
+              La idea detrás de esta antología virtual es bastante sencilla: mi lectura siempre ha sido más errante —y veleidosa— de lo que me gustaría,
+              y el hecho de que la mayoría de mis felicidades literarias hayan sido en formato PDF, y no con café y libros físicos como proclama el viejo rito,
+              hace que sea fácil perder puntos de referencia importantes.
+            </span>
+            <span data-lang="en">
+              The idea behind this virtual anthology is simple: my reading has always been more wandering —and fickle— than I’d like.
+              And because most of my happiest literary encounters have happened as PDFs (not with coffee and physical books, as the old ritual insists),
+              it’s easy to lose important reference points.
+            </span>
+          </p>
+
+          <p class="small">
+            <span data-lang="es">
+              Mi derrotero como lector no se ha materializado en una biblioteca, sino en el desorden del disco duro de mi notebook, la vaga y pobre memoria que poseo,
+              y en los cuadernos donde han terminado las notas que hago al leer —Dios ya sabrá en qué idioma están esas notas.
+              Esto es un intento de suplir esa biblioteca digitalmente o de exorcizar mi mal de Diógenes digital, si así se quiere.
+            </span>
+            <span data-lang="en">
+              My reading path hasn’t become a library; it lives in the mess of my laptop’s hard drive, in my vague and limited memory,
+              and in notebooks where my reading notes end up —God knows what language they’re written in.
+              This is an attempt to recreate that library digitally, or to exorcise my digital hoarding, if you prefer.
+            </span>
+          </p>
+
+          <div class="hr"></div>
+
+          <h2>
+            <span data-lang="es">Azar</span>
+            <span data-lang="en">Chance</span>
+          </h2>
+
+          <p class="small">
+            <span data-lang="es">
+              Si la taxonomía literaria le parece de mal gusto, usted siempre puede escoger un poema al azar. Pinche aquí:
+            </span>
+            <span data-lang="en">
+              If literary taxonomy feels distasteful, you can always pick a poem at random. Click here:
+            </span>
+          </p>
+
+          <button class="btn" id="btn-random" type="button">
+            <span data-lang="es">APRÉTAME APRÉTAME APR...</span>
+            <span data-lang="en">SURPRISE ME SURPRISE ME...</span>
+          </button>
+
+          <div class="hr"></div>
+
+          <h2>Contents</h2>
+          <ul class="toc">
+            <li>
+              <a href="#shelf-medieval">
+                <span data-lang="es">Medieval / Trovadores</span>
+                <span data-lang="en">Medieval / Troubadours</span>
+              </a>
+            </li>
+                        <li>
+              <a href="#shelf-expressionism">
+                <span data-lang="es">Expresionismo</span>
+                <span data-lang="en">Expressionism</span>
+              </a>
+            </li>
+            <li>
+              <a href="#notes">
+                <span data-lang="es">Notas y futuras adiciones</span>
+                <span data-lang="en">Notes & future additions</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      
+
+<div class="hint">
+  <p class="small">
+    <b>Tip:</b> you can use the <b>ES</b> and <b>EN</b> buttons to switch languages.
+    I capriciously choose one language to write in, and translate the other with AI—so if you feel like trying it, go for it.
+    <span style="opacity:.85;">
+      Poems don’t have this option for obvious reasons, except when a scholarly translation sits next to the original text.
+    </span>
+  </p>
+</div>
+
+<ul class="toc">
+
+      </aside>
+
+      <main class="main">
+        <section class="shelf" id="shelf-medieval">
+          <h2>
+            <span data-lang="es">Medieval / Trovadores</span>
+            <span data-lang="en">Medieval / Troubadours</span>
+          </h2>
+
+          <p class="small shelf-note">
+            <span data-lang="es">V – XV</span>
+            <span data-lang="en">5th – 15th c.</span>
+          </p>
+
+          <div class="card poem-card" id="poitiers">
+            <h3>Guillermo de Poitiers</h3>
+
+            <p style="margin-top:0; max-width: var(--measure);">
+              <a href="poetry/poitiers-dreit-nien.html">
+                <b>
+                  <span data-lang="es">Haré una poesía sobre absolutamente nada</span>
+                  <span data-lang="en">I will make a poem about absolutely nothing</span>
+                </b>
+              </a>
+              <span class="small">(Farai un vers de dreit nien)</span>
+            </p>
+
+            <p class="small">
+              <span data-lang="es">Traducción y texto original (occitano).</span>
+              <span data-lang="en">Translation and original text (Occitan).</span>
+            </p>
+
+            <div class="meta-row" style="justify-content:flex-start;">
+              <span class="badge">translation</span>
+              <span class="badge">original text</span>
+              <span class="badge">XI–XII c.</span>
+            </div>
+          </div>
+        </section>
+
+        
+        <section class="shelf" id="shelf-expressionism">
+          <h2>
+            <span data-lang="es">Expresionismo</span>
+            <span data-lang="en">Expressionism</span>
+          </h2>
+
+          <p class="small shelf-note">
+            <span data-lang="es">1900 – 1920 (aprox.)</span>
+            <span data-lang="en">c. 1900 – 1920</span>
+          </p>
+
+          <div class="card poem-card" id="simic">
+            <h3>Antun Branko Šimić (1898–1925)</h3>
+
+            <p style="margin-top:0; max-width: var(--measure);">
+              <a href="poetry/croata.html">
+                <b>
+                  <span data-lang="es">Retorno</span>
+                  <span data-lang="en">Return</span>
+                </b>
+              </a>
+              <span class="small">(Povratak)</span>
+            </p>
+
+            <p class="small">
+              <span data-lang="es">Poema original (croata) y traducción.</span>
+              <span data-lang="en">Original poem (Croatian) and translation.</span>
+            </p>
+
+            <div class="meta-row" style="justify-content:flex-start;">
+              <span class="badge">translation</span>
+              <span class="badge">original text</span>
+              <span class="badge">XX c.</span>
+              <span class="badge">expressionism</span>
+            </div>
+          </div>
+        </section>
+
+        <div class="hr"></div>
+
+        <section id="notes">
+          <h2>
+            <span data-lang="es">Notas y futuras adiciones</span>
+            <span data-lang="en">Notes & future additions</span>
+          </h2>
+
+          <p class="small">
+            <span data-lang="es">
+              <span style="text-decoration: underline;">As of 9.02.26</span>:
+              La idea del botón aleatorio viene de mi manía por convertir todo en algo lúdico. Iré agregando poemas que tengo anotados. 
+            </span>
+            <span data-lang="en">
+              <span style="text-decoration: underline;">As of 9.02.26</span>:
+              The random button comes from my habit of turning everything into something playful. I'll be adding poems I have noted down.
+            </span>
+          </p>
+          <p class="small">
+            <span data-lang="es">
+              Los cuentos irán en <a href="misc_oracle.html">Oráculo</a>, o quizá haga una antología de cuentos; pero quizás sea un poco mucho. Desde ahora los updates estarán en inglés nomas.
+            </span>
+            <span data-lang="en">
+              Short stories will go in <a href="misc_oracle.html">Oracle</a>, or maybe I’ll make a story anthology too —but that might be a bit much.
+            </span>
+                        <p class="small">
+                         <p class="small">
+            <span data-lang="en">
+              <span style="text-decoration: underline;">As of 10.02.26</span>: Descubrí que con IA puedo hacer templates de los html de los poemas y así me demoro 2 minutos en subirlos.
+            </span>
+          </p>
+
+          
+        </section>
+      </main>
+    </div>
   </div>
+
+  <script>
+    // --------------------------
+    // Language toggle (ES/EN)
+    // --------------------------
+    (function(){
+      var KEY = "poetry_lang";
+      var html = document.documentElement;
+      var btnES = document.getElementById("btn-es");
+      var btnEN = document.getElementById("btn-en");
+
+      function apply(lang){
+        html.setAttribute("data-active-lang", lang);
+        html.setAttribute("lang", lang);
+        if(btnES) btnES.classList.toggle("active", lang === "es");
+        if(btnEN) btnEN.classList.toggle("active", lang === "en");
+        try { localStorage.setItem(KEY, lang); } catch(e){}
+      }
+
+      function initial(){
+        var saved = null;
+        try { saved = localStorage.getItem(KEY); } catch(e){}
+        if(saved === "es" || saved === "en") return saved;
+
+        // default: Spanish if browser is Spanish, otherwise English
+        var nav = (navigator.language || "").toLowerCase();
+        if(nav.startsWith("es")) return "es";
+        return "es"; // keep your page Spanish-first
+      }
+
+      var lang = initial();
+      apply(lang);
+
+      if(btnES) btnES.addEventListener("click", function(){ apply("es"); });
+      if(btnEN) btnEN.addEventListener("click", function(){ apply("en"); });
+    })();
+
+    // --------------------------
+    // Small delight: open a random entry.
+    // Add new poem pages here when you create them.
+    // --------------------------
+    var POEMS = [
+      "poetry/poitiers-dreit-nien.html",
+      "poetry/croata.html"
+    ];
+
+    var btn = document.getElementById("btn-random");
+    if(btn){
+      btn.addEventListener("click", function(){
+        var pick = POEMS[Math.floor(Math.random() * POEMS.length)];
+        window.location.href = pick;
+      });
+    }
+  </script>
 </body>
 </html>
