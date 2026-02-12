@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>%%TITLE%%</title>
+  <link rel="stylesheet" href="../../css/style_frame.css" type="text/css" />
+
+  <style>
+    .meta-row{ display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin: 6px 0 0; }
+    .controls{ display:flex; flex-wrap:wrap; gap:8px; }
+    .btn{ appearance: none; border: 1px solid rgba(23,20,15,0.22); background: rgba(255,255,255,0.55); border-radius: 999px; padding: 6px 12px; font-family: var(--font-ui); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(23,20,15,0.78); cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+    .btn:hover{ border-color: rgba(23,20,15,0.35); }
+    .btn:active{ transform: translateY(1px); }
+    .btn.is-active{ border-color: rgba(23,20,15,0.42); box-shadow: inset 0 0 0 1px rgba(23,20,15,0.12); }
+    .poem-block{ margin-top: 12px; }
+    .poem-body{ max-width: var(--measure); }
+    .poem-body .stanza{ margin-bottom: 24px; }
+    .stanza-num{ font-family: var(--font-ui); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(23,20,15,0.60); margin-bottom: 4px; }
+    .poem-lines{ margin: 0; white-space: pre-wrap; }
+    .lang{ display: none; }
+    .lang.is-visible{ display: block; }
+    .author-figure{ margin: 0 0 10px; max-width: 260px; }
+    .author-figure img{ width: 100%; height: auto; display: block; border-radius: 14px; border: 1px solid rgba(23,20,15,0.14); }
+    .author-figure figcaption{ margin-top: 6px; opacity: 0.85; }
+    .credit{ margin-top: 14px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <p class="kicker"><a href="../misc_poetry_anthology.html">Personal Anthology of Poetry</a></p>
+    <h1>%%TITLE%%</h1>
+    <p class="lede">%%LEDE%%</p>
+
+    <div class="meta-row" aria-label="Entry tags">
+      %%BADGES%%
+    </div>
+
+    <div class="two-col">
+      <aside class="side">
+        <div class="card">
+          <figure class="author-figure">
+  <img src="%%AUTHOR_IMG%%" alt="%%AUTHOR%% — imagen referencial" loading="lazy">
+  <figcaption class="small">%%AUTHOR%% %%AUTHOR_DATES%%</figcaption>
+</figure>
+
+<div class="hr"></div>
+
+          <h2>Controls</h2>
+          <p class="small">Idiomas disponibles:</p>
+          <div class="controls" role="tablist" aria-label="Language toggle">
+            <button class="btn is-active" id="btn-es" type="button" role="tab" aria-selected="true">ES</button>
+            <button class="btn" id="btn-og" type="button" role="tab" aria-selected="false">OG</button>
+          </div>
+          <div class="hr"></div>
+          <h2>Navigation</h2>
+          <p class="small"><a class="btn" href="../misc_poetry_anthology.html">← Back to anthology</a></p>
+          <p class="small"><a class="btn" href="../Poetry.html">Poetry (Writings)</a></p>
+          <div class="hr"></div>
+          <h2>Azar</h2>
+          <p class="small">Para ir a una página aleatoria, pinche aquí:</p>
+          <button class="btn" id="btn-random" type="button">Surprise me</button>
+        </div>
+      </aside>
+
+      <main class="main">
+        <section class="card poem-block">
+          <h2>Poema</h2>
+          <p class="small" style="margin-top:0;">%%SOURCE_NOTE%%</p>
+
+          <div class="lang is-visible" id="lang-es" role="tabpanel" aria-labelledby="btn-es">
+            <div class="poem-body">
+              <div class="stanza">
+                <div class="poem-lines">%%POEM_ES%%</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lang" id="lang-og" role="tabpanel" aria-labelledby="btn-og">
+            <div class="poem-body">
+              <div class="stanza">
+                <div class="poem-lines">%%POEM_OG%%</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hr"></div>
+          <p class="small credit"><b>Credit / source note:</b> %%CREDIT%%</p>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    var btnEs = document.getElementById("btn-es");
+    var btnOg = document.getElementById("btn-og");
+    var langEs = document.getElementById("lang-es");
+    var langOg = document.getElementById("lang-og");
+
+    function showLang(which){
+      if(which === "og"){
+        langEs.classList.remove("is-visible");
+        langOg.classList.add("is-visible");
+        btnEs.classList.remove("is-active");
+        btnOg.classList.add("is-active");
+      }else{
+        langOg.classList.remove("is-visible");
+        langEs.classList.add("is-visible");
+        btnOg.classList.remove("is-active");
+        btnEs.classList.add("is-active");
+      }
+    }
+
+    btnEs.addEventListener("click", function(){ showLang("es"); });
+    btnOg.addEventListener("click", function(){ showLang("og"); });
+
+    var btnRand = document.getElementById("btn-random");
+    if(btnRand){
+      btnRand.addEventListener("click", function(){ alert("This would link to another poem in your collection."); });
+    }
+  </script>
+</body>
+</html>

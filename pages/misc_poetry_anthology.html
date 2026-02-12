@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" data-active-lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,12 +20,11 @@
     .poem-card .small{ margin: 6px 0; }
 
     .hint{
-  padding: 6px 10px;
-  border-left: 1px dashed rgba(23,20,15,0.18);
-  background: transparent;
-  opacity: 0.75;
-}
-
+      padding: 6px 10px;
+      border-left: 1px dashed rgba(23,20,15,0.18);
+      background: transparent;
+      opacity: 0.75;
+    }
 
     .btn{
       appearance: none;
@@ -56,6 +55,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="page">
     <p class="kicker">
@@ -147,14 +147,44 @@
           <ul class="toc">
             <li>
               <a href="#shelf-medieval">
-                <span data-lang="es">Medieval / Trovadores</span>
-                <span data-lang="en">Medieval / Troubadours</span>
+                <span data-lang="es">Medieval</span>
+                <span data-lang="en">Medieval</span>
               </a>
             </li>
-                        <li>
-              <a href="#shelf-expressionism">
-                <span data-lang="es">Expresionismo</span>
-                <span data-lang="en">Expressionism</span>
+            <li>
+              <a href="#shelf-early-modern">
+                <span data-lang="es">Temprana modernidad</span>
+                <span data-lang="en">Early modernity</span>
+              </a>
+            </li>
+            <li>
+              <a href="#shelf-long-19c">
+                <span data-lang="es">Largo siglo XIX</span>
+                <span data-lang="en">Long 19th century</span>
+              </a>
+            </li>
+            <li>
+              <a href="#shelf-interwar">
+                <span data-lang="es">Vanguardias y entreguerras</span>
+                <span data-lang="en">Avant-gardes & interwar</span>
+              </a>
+            </li>
+            <li>
+              <a href="#shelf-postwar">
+                <span data-lang="es">Posguerra y mediados de siglo</span>
+                <span data-lang="en">Postwar & “mid-century”</span>
+              </a>
+            </li>
+            <li>
+              <a href="#shelf-late-modern">
+                <span data-lang="es">Tardomoderno</span>
+                <span data-lang="en">Late modern</span>
+              </a>
+            </li>
+            <li>
+              <a href="#shelf-contemporary">
+                <span data-lang="es">Contemporánea</span>
+                <span data-lang="en">Contemporary</span>
               </a>
             </li>
             <li>
@@ -166,32 +196,29 @@
           </ul>
         </div>
 
-      
-
-<div class="hint">
-  <p class="small">
-    <b>Tip:</b> you can use the <b>ES</b> and <b>EN</b> buttons to switch languages.
-    I capriciously choose one language to write in, and translate the other with AI—so if you feel like trying it, go for it.
-    <span style="opacity:.85;">
-      Poems don’t have this option for obvious reasons, except when a scholarly translation sits next to the original text.
-    </span>
-  </p>
-</div>
-
-<ul class="toc">
-
+        <div class="hint">
+          <p class="small">
+            <b>Tip:</b> you can use the <b>ES</b> and <b>EN</b> buttons to switch languages.
+            I capriciously choose one language to write in, and translate the other with AI—so if you feel like trying it, go for it.
+            <span style="opacity:.85;">
+              Poems don’t have this option for obvious reasons, except when a scholarly translation sits next to the original text.
+            </span>
+          </p>
+        </div>
       </aside>
 
       <main class="main">
+
+        <!-- 1) Medieval -->
         <section class="shelf" id="shelf-medieval">
           <h2>
-            <span data-lang="es">Medieval / Trovadores</span>
-            <span data-lang="en">Medieval / Troubadours</span>
+            <span data-lang="es">Medieval</span>
+            <span data-lang="en">Medieval</span>
           </h2>
 
           <p class="small shelf-note">
-            <span data-lang="es">V – XV</span>
-            <span data-lang="en">5th – 15th c.</span>
+            <span data-lang="es">c. 1100–1500</span>
+            <span data-lang="en">c. 1100–1500</span>
           </p>
 
           <div class="card poem-card" id="poitiers">
@@ -216,20 +243,69 @@
               <span class="badge">translation</span>
               <span class="badge">original text</span>
               <span class="badge">XI–XII c.</span>
+              <span class="badge">troubadours</span>
             </div>
           </div>
         </section>
 
-        
-        <section class="shelf" id="shelf-expressionism">
+        <!-- 2) Early Modern -->
+        <section class="shelf" id="shelf-early-modern">
           <h2>
-            <span data-lang="es">Expresionismo</span>
-            <span data-lang="en">Expressionism</span>
+            <span data-lang="es">Temprana modernidad</span>
+            <span data-lang="en">Early modernity</span>
           </h2>
 
           <p class="small shelf-note">
-            <span data-lang="es">1900 – 1920 (aprox.)</span>
-            <span data-lang="en">c. 1900 – 1920</span>
+            <span data-lang="es">1500–1800 (Renacimiento · Barroco · Ilustración)</span>
+            <span data-lang="en">1500–1800 (Renaissance · Baroque · Enlightenment)</span>
+          </p>
+
+          <div class="card poem-card" aria-label="Placeholder">
+            <h3>
+              <span data-lang="es">Por agregar</span>
+              <span data-lang="en">To be added</span>
+            </h3>
+            <p class="small">
+              <span data-lang="es">Este estante está vacío por ahora. Cuando agregues poemas, usa badges para “Renacimiento”, “Barroco”, “Ilustración”, etc.</span>
+              <span data-lang="en">This shelf is empty for now. When you add poems, use badges for “Renaissance”, “Baroque”, “Enlightenment”, etc.</span>
+            </p>
+          </div>
+        </section>
+
+        <!-- 3) Long 19th -->
+        <section class="shelf" id="shelf-long-19c">
+          <h2>
+            <span data-lang="es">Largo siglo XIX</span>
+            <span data-lang="en">Long 19th century</span>
+          </h2>
+
+          <p class="small shelf-note">
+            <span data-lang="es">c. 1780–1914 (Romanticismo · Realismo · Simbolismo / fin de siglo)</span>
+            <span data-lang="en">c. 1780–1914 (Romanticism · Realism · Symbolism / fin de siècle)</span>
+          </p>
+
+          <div class="card poem-card" aria-label="Placeholder">
+            <h3>
+              <span data-lang="es">Por agregar</span>
+              <span data-lang="en">To be added</span>
+            </h3>
+            <p class="small">
+              <span data-lang="es">Si quieres mantener pocas shelves, este es un buen lugar para meter “Simbolismo” y “Modernismos tempranos” como badges.</span>
+              <span data-lang="en">If you want to keep few shelves, this is a good place to keep “Symbolism” and “early modernisms” as badges.</span>
+            </p>
+          </div>
+        </section>
+
+        <!-- 4) Avant-gardes & Interwar -->
+        <section class="shelf" id="shelf-interwar">
+          <h2>
+            <span data-lang="es">Vanguardias y entreguerras</span>
+            <span data-lang="en">Avant-gardes & interwar</span>
+          </h2>
+
+          <p class="small shelf-note">
+            <span data-lang="es">1914–1945</span>
+            <span data-lang="en">1914–1945</span>
           </p>
 
           <div class="card poem-card" id="simic">
@@ -259,6 +335,117 @@
           </div>
         </section>
 
+        <!-- 5) Postwar & mid-century -->
+        <section class="shelf" id="shelf-postwar">
+          <h2>
+            <span data-lang="es">Posguerra y mediados de siglo</span>
+            <span data-lang="en">Postwar & “mid-century”</span>
+          </h2>
+
+          <p class="small shelf-note">
+            <span data-lang="es">1945–1979</span>
+            <span data-lang="en">1945–1979</span>
+          </p>
+
+          <div class="card poem-card" id="la-calle">
+            <h3>Octavio Paz (1914–1998)</h3>
+
+            <p style="margin-top:0; max-width: var(--measure);">
+              <a href="poetry/la-calle.html">
+                <b>
+                  <span data-lang="es">La calle</span>
+                  <span data-lang="en">La calle</span>
+                </b>
+              </a>
+              <span class="small">(Libertad bajo palabra)</span>
+            </p>
+
+            <p class="small">
+              <span data-lang="es">Texto original (1949).</span>
+              <span data-lang="en">Original text (1949).</span>
+            </p>
+
+            <div class="meta-row" style="justify-content:flex-start;">
+              <span class="badge">original text</span>
+              <span class="badge">1949</span>
+              <span class="badge">surrealism</span>
+            </div>
+          </div>
+
+          <div class="card poem-card" id="robjua">
+            <h3>Roberto Juarroz (1925–1995)</h3>
+
+            <p style="margin-top:0; max-width: var(--measure);">
+              <a href="poetry/robjua.html">
+                <b>
+                  <span data-lang="es">Pienso que en este momento</span>
+                  <span data-lang="en">Pienso que en este momento</span>
+                </b>
+              </a>
+              <span class="small">(Poesía vertical)</span>
+            </p>
+
+            <p class="small">
+              <span data-lang="es">Texto original (fragmento).</span>
+              <span data-lang="en">Original text (fragment).</span>
+            </p>
+
+            <div class="meta-row" style="justify-content:flex-start;">
+              <span class="badge">original text</span>
+              <span class="badge">1958–1975</span>
+              <span class="badge">metaphysical?</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6) Late modern -->
+        <section class="shelf" id="shelf-late-modern">
+          <h2>
+            <span data-lang="es">Tardomoderno</span>
+            <span data-lang="en">Late modern</span>
+          </h2>
+
+          <p class="small shelf-note">
+            <span data-lang="es">1980–2000</span>
+            <span data-lang="en">1980–2000</span>
+          </p>
+
+          <div class="card poem-card" aria-label="Placeholder">
+            <h3>
+              <span data-lang="es">Por agregar</span>
+              <span data-lang="en">To be added</span>
+            </h3>
+            <p class="small">
+              <span data-lang="es">Útil para experimental, neobarroco, “posmodernidades” varias: mantenlo como shelf y distingue con badges.</span>
+              <span data-lang="en">Useful for experimental poetry, neo-baroque, and assorted postmodernities: keep this as a shelf and distinguish with badges.</span>
+            </p>
+          </div>
+        </section>
+
+        <!-- 7) Contemporary -->
+        <section class="shelf" id="shelf-contemporary">
+          <h2>
+            <span data-lang="es">Contemporánea</span>
+            <span data-lang="en">Contemporary</span>
+          </h2>
+
+          <p class="small shelf-note">
+            <span data-lang="es">2000–hoy</span>
+            <span data-lang="en">2000–today</span>
+          </p>
+
+          <div class="card poem-card" aria-label="Placeholder">
+            <h3>
+              <span data-lang="es">Por agregar</span>
+              <span data-lang="en">To be added</span>
+            </h3>
+            <p class="small">
+              <span data-lang="es">Cuando esto crezca, puedes agregar badges por década (2000s, 2010s, 2020s) sin crear nuevas shelves.</span>
+              <span data-lang="en">As this grows, you can add decade badges (2000s, 2010s, 2020s) without creating new shelves.</span>
+            </p>
+          </div>
+        </section>
+
         <div class="hr"></div>
 
         <section id="notes">
@@ -270,13 +457,14 @@
           <p class="small">
             <span data-lang="es">
               <span style="text-decoration: underline;">As of 9.02.26</span>:
-              La idea del botón aleatorio viene de mi manía por convertir todo en algo lúdico. Iré agregando poemas que tengo anotados. 
+              La idea del botón aleatorio viene de mi manía por convertir todo en algo lúdico. Iré agregando poemas que tengo anotados.
             </span>
             <span data-lang="en">
               <span style="text-decoration: underline;">As of 9.02.26</span>:
               The random button comes from my habit of turning everything into something playful. I'll be adding poems I have noted down.
             </span>
           </p>
+
           <p class="small">
             <span data-lang="es">
               Los cuentos irán en <a href="misc_oracle.html">Oráculo</a>, o quizá haga una antología de cuentos; pero quizás sea un poco mucho. Desde ahora los updates estarán en inglés nomas.
@@ -284,15 +472,20 @@
             <span data-lang="en">
               Short stories will go in <a href="misc_oracle.html">Oracle</a>, or maybe I’ll make a story anthology too —but that might be a bit much.
             </span>
-                        <p class="small">
-                         <p class="small">
-            <span data-lang="en">
-              <span style="text-decoration: underline;">As of 10.02.26</span>: Descubrí que con IA puedo hacer templates de los html de los poemas y así me demoro 2 minutos en subirlos.
-            </span>
           </p>
 
-          
+          <p class="small">
+            <span data-lang="en">
+              <span style="text-decoration: underline;">As of 10.02.26</span>:
+              Descubrí que con IA puedo hacer templates de los html de los poemas y así me demoro 2 minutos en subirlos.
+            </span>
+            <span data-lang="es">
+              <span style="text-decoration: underline;">As of 10.02.26</span>:
+              Descubrí que con IA puedo hacer templates de los html de los poemas y así me demoro 2 minutos en subirlos.
+            </span>
+          </p>
         </section>
+
       </main>
     </div>
   </div>
@@ -320,14 +513,13 @@
         try { saved = localStorage.getItem(KEY); } catch(e){}
         if(saved === "es" || saved === "en") return saved;
 
-        // default: Spanish if browser is Spanish, otherwise English
+        // default: Spanish-first
         var nav = (navigator.language || "").toLowerCase();
         if(nav.startsWith("es")) return "es";
-        return "es"; // keep your page Spanish-first
+        return "es";
       }
 
-      var lang = initial();
-      apply(lang);
+      apply(initial());
 
       if(btnES) btnES.addEventListener("click", function(){ apply("es"); });
       if(btnEN) btnEN.addEventListener("click", function(){ apply("en"); });
@@ -339,7 +531,9 @@
     // --------------------------
     var POEMS = [
       "poetry/poitiers-dreit-nien.html",
-      "poetry/croata.html"
+      "poetry/croata.html",
+      "poetry/robjua.html",
+      "poetry/la-calle.html"
     ];
 
     var btn = document.getElementById("btn-random");
