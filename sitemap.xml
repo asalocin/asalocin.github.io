@@ -1,9 +1,158 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://asalocin.github.io/</loc></url>
-  <url><loc>https://asalocin.github.io/pages/about_me.html</loc></url>
-  <url><loc>https://asalocin.github.io/pages/writings_essays.html</loc></url>
-  <url><loc>https://asalocin.github.io/pages/music_reviews.html</loc></url>
-  <url><loc>https://asalocin.github.io/pages/misc_favorite_websites.html</loc></url>
-  <url><loc>https://asalocin.github.io/pages/blog.html</loc></url>
+  <!-- Home page -->
+  <url>
+    <loc>https://asalocin.com/</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Main sections -->
+  <url>
+    <loc>https://asalocin.com/index.html</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- About -->
+  <url>
+    <loc>https://asalocin.com/pages/about_me.html</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Writings Section -->
+  <url>
+    <loc>https://asalocin.com/pages/EssaysIndex.html</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://asalocin.com/pages/writingsonmusic.html</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://asalocin.com/pages/Poetry.html</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Poetry poems (individual) -->
+  <url>
+    <loc>https://asalocin.com/pages/poetry/croata.html</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://asalocin.com/pages/poetry/la-calle.html</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://asalocin.com/pages/poetry/poitiers-dreit-nien.html</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://asalocin.com/pages/poetry/robjua.html</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://asalocin.com/pages/others.html</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Music Section -->
+  <url>
+    <loc>https://asalocin.com/pages/reviews.html</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://asalocin.com/pages/Interviews.html</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Interviews (individual) -->
+  <url>
+    <loc>https://asalocin.com/pages/interviews/lip-readers.html</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://asalocin.com/pages/thelist.html</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Miscellaneous Section -->
+  <url>
+    <loc>https://asalocin.com/pages/misc_wikipedia.html</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://asalocin.com/pages/misc_oracle.html</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://asalocin.com/pages/misc_favorite_websites.html</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://asalocin.com/pages/misc_favorite_yt.html</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://asalocin.com/pages/misc_poetry_anthology.html</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Blog -->
+  <url>
+    <loc>https://asalocin.com/pages/blog.html</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
