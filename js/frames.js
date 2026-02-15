@@ -36,6 +36,10 @@ var FRAME_MAP = {
   27: "pages/blog.html"
 };
 
+// Cache-buster version. Update this value when you deploy to force
+// clients to reload iframe contents (format: YYYYMMDD or any string).
+var CACHE_BUST = "20260212";
+
 function getIframe(){
   return document.getElementById("enframe");
 }
@@ -183,7 +187,9 @@ function loadFrame(src, variable, opts){
     window.setTimeout(resizeIframe, 450);
   };
 
-  iframe.src = src;
+  // Append cache-buster query param so browsers fetch a fresh copy
+  var srcWithCache = src + (src.indexOf('?') === -1 ? '?v=' + CACHE_BUST : '&v=' + CACHE_BUST);
+  iframe.src = srcWithCache;
 
   if(!opts.skipHistory){
     setHashFrame(variable, true);
@@ -207,7 +213,7 @@ window.addEventListener("load", function(){
     var v = Number(initial);
     setActiveNav(v);
     var iframe = getIframe();
-    if(iframe) iframe.src = FRAME_MAP[v];
+    if(iframe) iframe.src = FRAME_MAP[v] + (FRAME_MAP[v].indexOf('?') === -1 ? '?v=' + CACHE_BUST : '&v=' + CACHE_BUST);
     window.setTimeout(resizeIframe, 80);
     window.setTimeout(resizeIframe, 250);
     setHashFrame(v, false);
