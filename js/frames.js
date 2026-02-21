@@ -31,9 +31,10 @@ var FRAME_MAP = {
   24: "pages/misc_favorite_websites.html",
   25: "pages/misc_favorite_yt.html",
   26: "pages/misc_poetry_anthology.html",
+  27: "pages/misc_annual_reviews.html",
 
   // 5) Blog
-  27: "pages/blog.html"
+  28: "pages/blog.html"
 };
 
 // Cache-buster version. Update this value when you deploy to force

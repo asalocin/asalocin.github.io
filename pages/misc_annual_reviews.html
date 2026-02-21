@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="es" data-active-lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nicolás Aguilar — Annual Reviews</title>
+  <link rel="stylesheet" href="../css/style_frame.css" type="text/css" />
+
+  <style>
+    /* Page-local helpers */
+    .meta-row{ display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin: 6px 0 0; }
+    .toc a{ text-decoration: none; }
+    .toc a:hover{ text-decoration: underline; }
+
+    .shelf{ margin-top: 14px; }
+    .shelf-title{ margin-top: 0; }
+    .shelf-note{ margin-top: 6px; }
+
+    .subsection-title{ margin-top: 20px; margin-bottom: 10px; font-size: 1.1em; font-weight: 600; }
+    .item-card h4{ margin-top: 0; }
+    .item-card .small{ margin: 6px 0; }
+
+    .hint{
+      padding: 6px 10px;
+      border-left: 1px dashed rgba(23,20,15,0.18);
+      background: transparent;
+      opacity: 0.75;
+    }
+
+    .btn{
+      appearance: none;
+      border: 1px solid rgba(23,20,15,0.22);
+      background: rgba(255,255,255,0.55);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-family: var(--font-ui);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(23,20,15,0.78);
+      cursor: pointer;
+    }
+    .btn:hover{ border-color: rgba(23,20,15,0.35); }
+    .btn:active{ transform: translateY(1px); }
+
+    /* Language toggling */
+    [data-lang]{ display: none; }
+    html[data-active-lang="es"] [data-lang="es"]{ display: initial; }
+    html[data-active-lang="en"] [data-lang="en"]{ display: initial; }
+
+    .lang-switch{ display:flex; gap:8px; justify-content:center; margin-top: 10px; }
+    .btn.active{
+      border-color: rgba(23,20,15,0.38);
+      background: rgba(255,255,255,0.78);
+      color: rgba(23,20,15,0.88);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <p class="kicker">
+      <span data-lang="es">Miscelánea</span>
+      <span data-lang="en">Miscellaneous</span>
+    </p>
+
+    <h1>
+      <span data-lang="es">Reseñas Anuales</span>
+      <span data-lang="en">Annual Reviews</span>
+    </h1>
+
+    <p class="lede">
+      <span data-lang="es">Un registro de lo que leo y escucho cada año.</span>
+      <span data-lang="en">A record of what I read and listen to each year.</span>
+    </p>
+
+    <div class="meta-row" aria-label="Page tags">
+      <span class="badge">readings</span>
+      <span class="badge">music</span>
+      <span class="badge">annual</span>
+      <span class="badge">bilingual</span>
+    </div>
+
+    <!-- Language switch -->
+    <div class="lang-switch" aria-label="Language">
+      <button class="btn" id="btn-es" type="button">ES</button>
+      <button class="btn" id="btn-en" type="button">EN</button>
+    </div>
+
+    <div class="two-col">
+      <aside class="side">
+        <div class="card">
+          <h2 class="shelf-title">
+            <span data-lang="es">Sobre la sección</span>
+            <span data-lang="en">About this section</span>
+          </h2>
+
+          <p class="small">
+            <span data-lang="es">
+              Un simple registro del año.
+            </span>
+            <span data-lang="en">
+                A simple record of the year.
+          </p>
+        </div>
+
+        <div class="hint">
+          <p class="small">
+            <b>Tip:</b> use the <b>ES</b> and <b>EN</b> buttons to switch languages.
+          </p>
+        </div>
+      </aside>
+
+      <main class="main">
+
+        <!-- 2026 -->
+        <section class="shelf" id="year-2026">
+          <h2>
+            <span data-lang="es">Años</span>
+            <span data-lang="en">Years</span>
+          </h2>
+
+          <div class="card item-card" id="year-2026-card">
+            <h3>
+              <a href="annual/2026.html">2026</a>
+            </h3>
+
+            <p style="margin-top:0; max-width: var(--measure);">
+              <span class="small">
+                <span data-lang="es">
+                  <b>Lecturas:</b> *bajo construcción*<br>
+                  <b>Música:</b> *bajo construcción*
+                </span>
+                <span data-lang="en">
+                  <b>Readings:</b> *under construction*<br>
+                  <b>Music:</b> *under construction*
+                </span>
+              </span>
+            </p>
+
+            <div class="meta-row" style="justify-content:flex-start;">
+              <span class="badge">2026</span>
+              <span class="badge">readings</span>
+              <span class="badge">music</span>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <script>
+    // Language switching
+    const btnEs = document.getElementById("btn-es");
+    const btnEn = document.getElementById("btn-en");
+    const html = document.documentElement;
+
+    function setLanguage(lang) {
+      html.setAttribute("data-active-lang", lang);
+      btnEs.classList.toggle("active", lang === "es");
+      btnEn.classList.toggle("active", lang === "en");
+    }
+
+    btnEs.addEventListener("click", () => setLanguage("es"));
+    btnEn.addEventListener("click", () => setLanguage("en"));
+
+    // Initialize
+    setLanguage("es");
+  </script>
+</body>
+</html>
