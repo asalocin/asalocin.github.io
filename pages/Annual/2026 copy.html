@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="es" data-active-lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nicolás Aguilar — 2026</title>
+  <link rel="stylesheet" href="../../css/style_frame.css" type="text/css" />
+
+  <style>
+    /* Page-local helpers */
+    .meta-row{ display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin: 6px 0 0; }
+    .section-title{ margin-top: 28px; margin-bottom: 12px; font-size: 1.15em; font-weight: 600; }
+    .item{ margin: 10px 0; }
+    .item-title{ margin: 0; font-weight: 500; }
+    .item-meta{ margin: 4px 0 0; }
+
+    .btn{
+      appearance: none;
+      border: 1px solid rgba(23,20,15,0.22);
+      background: rgba(255,255,255,0.55);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-family: var(--font-ui);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(23,20,15,0.78);
+      cursor: pointer;
+    }
+    .btn:hover{ border-color: rgba(23,20,15,0.35); }
+    .btn:active{ transform: translateY(1px); }
+
+    /* Language toggling */
+    [data-lang]{ display: none; }
+    html[data-active-lang="es"] [data-lang="es"]{ display: initial; }
+    html[data-active-lang="en"] [data-lang="en"]{ display: initial; }
+
+    .lang-switch{ display:flex; gap:8px; justify-content:center; margin-top: 10px; margin-bottom: 20px; }
+    .btn.active{
+      border-color: rgba(23,20,15,0.38);
+      background: rgba(255,255,255,0.78);
+      color: rgba(23,20,15,0.88);
+    }
+
+    .back-link{ margin-bottom: 20px; }
+
+    .section-title::before{
+      content: "※ ";
+      font-family: var(--font-ui);
+      font-weight: 500;
+      color: rgba(23,20,15,0.40);
+    }
+
+    .reading-list li::before{
+      content: "• ";
+      color: rgba(23,20,15,0.50);
+      margin-right: 6px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <p class="kicker">
+      <span data-lang="es">Reseñas Anuales</span>
+      <span data-lang="en">Annual Reviews</span>
+    </p>
+
+    <h1>2026</h1>
+
+    <p class="lede">
+      <span data-lang="es">Lecturas, música y películas de este año.</span>
+      <span data-lang="en">Readings, music, and films from this year.</span>
+    </p>
+
+    <!-- Language switch -->
+    <div class="lang-switch" aria-label="Language">
+      <button class="btn" id="btn-es" type="button">ES</button>
+      <button class="btn" id="btn-en" type="button">EN</button>
+    </div>
+
+    <div class="back-link">
+      <p class="small">
+        <a href="../misc_annual_reviews.html">
+          <span data-lang="es">← Volver al índice</span>
+          <span data-lang="en">← Back to index</span>
+        </a>
+      </p>
+    </div>
+
+    <!-- Actualmente leyendo -->
+<section>
+  <h2 class="section-title">
+    <span data-lang="es">Actualmente en mi escritorio</span>
+    <span data-lang="en">On my desk</span>
+  </h2>
+  <ul style="padding-left: 0; list-style: none;" class="reading-list">
+    <li class="item"><span data-lang="es">Miguel de Cervantes – Don Quijote...</span>...</li>
+    <li class="item"><span data-lang="es">Thomas Hawkins – Lebesgue's Theory...</span>...</li>
+    <li class="item"><span data-lang="es">David M. Bressoud – A Radical Approach...</span>...</li>
+    <li class="item"><span data-lang="es">Jaime San Martín Aristegui – Teoría de la Medida...</span>...</li>
+
+    </ul>
+</section>
+
+    <!-- Escuchando actualmente -->
+    <section>
+      <h2 class="section-title">
+        <span data-lang="es">Escuchando actualmente</span>
+        <span data-lang="en">Currently listening</span>
+      </h2>
+      <div class="item">
+        <p class="item-title">Nombre del álbum</p>
+        <p class="item-meta small">
+          <span data-lang="es">Artista · Notas sobre el disco...</span>
+          <span data-lang="en">Artist · Notes about the album...</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- Libros -->
+    <section>
+      <h2 class="section-title">
+        <span data-lang="es">Libros</span>
+        <span data-lang="en">Books</span>
+      </h2>
+      <ul style="padding-left: 20px;">
+        <li><span data-lang="es">Título del libro</span><span data-lang="en">Book title</span></li>
+        <li><span data-lang="es">Otro libro</span><span data-lang="en">Another book</span></li>
+      </ul>
+    </section>
+
+    <!-- Discos / Piezas -->
+    <section>
+      <h2 class="section-title">
+        <span data-lang="es">Discos / Piezas</span>
+        <span data-lang="en">Albums / Pieces</span>
+      </h2>
+      <ul style="padding-left: 20px;">
+        <li><span data-lang="es">Artista - Álbum</span><span data-lang="en">Artist - Album</span></li>
+        <li><span data-lang="es">Otro artista - Otro álbum</span><span data-lang="en">Another artist - Another album</span></li>
+      </ul>
+    </section>
+
+    <!-- Películas vistas -->
+    <section>
+      <h2 class="section-title">
+        <span data-lang="es">Películas</span>
+        <span data-lang="en">Films</span>
+      </h2>
+      <ul style="padding-left: 20px;">
+        <li><span data-lang="es">Lola – Rainer Werner Fassbinder</span><span data-lang="en">Lola – Rainer Werner Fassbinder</span></li>
+        <li><span data-lang="es">Perfect Blue – Satoshi Kon</span><span data-lang="en">Perfect Blue – Satoshi Kon</span></li>
+        <li><span data-lang="es">East of Eden – Elia Kazan</span><span data-lang="en">East of Eden – Elia Kazan</span></li>
+        <li><span data-lang="es">Marnie – Alfred Hitchcock</span><span data-lang="en">Marnie – Alfred Hitchcock</span></li>
+      </ul>
+    </section>
+
+  </div>
+
+  <script>
+    // Language switching
+    const btnEs = document.getElementById("btn-es");
+    const btnEn = document.getElementById("btn-en");
+    const html = document.documentElement;
+
+    function setLanguage(lang) {
+      html.setAttribute("data-active-lang", lang);
+      btnEs.classList.toggle("active", lang === "es");
+      btnEn.classList.toggle("active", lang === "en");
+    }
+
+    btnEs.addEventListener("click", () => setLanguage("es"));
+    btnEn.addEventListener("click", () => setLanguage("en"));
+
+    // Initialize
+    setLanguage("es");
+  </script>
+</body>
+</html>

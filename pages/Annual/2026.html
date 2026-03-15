@@ -56,6 +56,80 @@
       color: rgba(23,20,15,0.50);
       margin-right: 6px;
     }
+
+    /* Months grid - minimalist editorial style */
+    .months-section{ margin-top: 28px; }
+    .months-grid{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      max-width: 980px;
+      margin: 10px auto 60px;
+      align-items: start;
+    }
+    @media (max-width: 880px){ .months-grid{ grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 520px){ .months-grid{ grid-template-columns: repeat(1,1fr); } }
+
+    .month{
+      background: rgba(250,249,247,0.9);
+      border: 1px solid rgba(23,20,15,0.08);
+      padding: 24px;
+      border-radius: 8px;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      cursor: pointer;
+      transition: transform .14s ease, border-color .14s ease, background .18s ease;
+      min-height: 110px;
+      position: relative;
+    }
+    .month:focus{ outline: none; box-shadow: 0 0 0 3px rgba(23,20,15,0.04); }
+    .month:hover{ transform: translateY(-4px); border-color: rgba(23,20,15,0.12); }
+
+    .month .month-name{ font-weight:700; letter-spacing:0.06em; font-size:1.05em; }
+    .month .month-sub{ color: rgba(23,20,15,0.55); font-size: 0.92em; }
+    .month .month-note{ margin-top:6px; color: rgba(23,20,15,0.6); font-size:0.9em; }
+
+    /* Floating panel */
+    .month-panel{
+      position: absolute;
+      z-index: 40;
+      min-width: 260px;
+      max-width: 420px;
+      background: rgba(255,255,255,0.98);
+      border: 1px solid rgba(23,20,15,0.09);
+      padding: 14px 16px;
+      border-radius: 8px;
+      box-shadow: 0 6px 18px rgba(23,20,15,0.04);
+      transform-origin: top left;
+      transition: opacity .18s ease, transform .18s ease;
+      opacity: 0;
+      pointer-events: none;
+      font-size: 0.94em;
+      color: rgba(23,20,15,0.9);
+    }
+    .month-panel.open{ opacity: 1; pointer-events: auto; transform: translateY(6px) scale(1); }
+    .month-panel h3{ margin:0 0 6px 0; font-size:1em; font-weight:700; }
+    .month-panel p.note{ margin:0 0 10px 0; color: rgba(23,20,15,0.62); font-size:0.9em; }
+    .month-panel .subhead{ margin-top:8px; font-weight:600; font-size:0.86em; color: rgba(23,20,15,0.6); }
+    .month-panel ul{ margin:6px 0 0 14px; padding:0; }
+    .month-panel li{ margin: 6px 0; line-height:1.2; }
+
+    /* small poetic detail */
+    .month::before{ content: "—"; position:absolute; left:12px; top:12px; color: rgba(23,20,15,0.08); font-size:28px; }
+
+    /* Modal (expanded) for full content */
+    .modal-backdrop{ position: fixed; inset: 0; background: rgba(10,8,6,0.28); display:none; align-items:center; justify-content:center; z-index:60; }
+    .modal-backdrop.open{ display:flex; }
+    .month-modal{ background: #fff; border-radius:10px; max-width:780px; width:92%; max-height:82vh; overflow:auto; padding:20px 22px; box-shadow: 0 20px 40px rgba(23,20,15,0.12); border:1px solid rgba(23,20,15,0.06); }
+    .month-modal h3{ margin-top:0; }
+    .modal-close{ position:absolute; right:18px; top:12px; background:transparent; border:0; font-size:18px; color:rgba(23,20,15,0.6); cursor:pointer; }
+    .month-modal .meta-note{ margin-top:12px; color:rgba(23,20,15,0.56); font-size:0.9em; }
+    /* Mathematics mini-section */
+    .math-section .section-title{ margin-top: 18px; font-size:1.02em; }
+    .inline-note{ display:flex; gap:10px; margin-left:18px; margin-top:10px; color:rgba(23,20,15,0.62); font-size:0.95em; }
+    .inline-note .bullet{ color: rgba(23,20,15,0.58); line-height:1; transform:translateY(2px); }
+    .inline-note .note-text{ margin:0; }
   </style>
 </head>
 
@@ -87,72 +161,54 @@
         </a>
       </p>
     </div>
+    <!-- Months grid interface (March → Feb) -->
+    <section class="months-section" aria-labelledby="months-title">
+      <h2 id="months-title" class="section-title">Lista mensual</h2>
 
-    <!-- Actualmente leyendo -->
-<section>
-  <h2 class="section-title">
-    <span data-lang="es">Actualmente en mi escritorio</span>
-    <span data-lang="en">On my desk</span>
-  </h2>
-  <ul style="padding-left: 0; list-style: none;" class="reading-list">
-        <li class="item"><span data-lang="es">Miguel de Cervantes – Don Quijote de la Mancha - RAE aniversario.</span><span data-lang="en">RAE – Don Quixote</span></li>
-        <li class="item"><span data-lang="es">Thomas Hawkins – Lebesgue's Theory Of Integration: Its Origins And – Chelsea scientific books, 2nd ed, 1979</span><span data-lang="en">Thomas Hawkins – Lebesgue's Theory Of Integration: Its Origins And – Chelsea scientific books, 2nd ed, 1979</span></li>
-        <li class="item"><span data-lang="es">David M. Bressoud – A Radical Approach to Lebesgue's Theory of Integration – MAA textbooks, Cambridge, 2008</span><span data-lang="en">David M. Bressoud – A Radical Approach to Lebesgue's Theory of Integration – MAA textbooks, Cambridge, 2008</span></li>
-        <li class="item"><span data-lang="es">Jaime San Martín Aristegui – Teoría de la Medida – Course Notes, Editorial Universitaria, 2018</span><span data-lang="en">Jaime San Martín Aristegui – Teoría de la Medida – Course Notes, Editorial Universitaria, 2018</span></li>
-      </ul>
-    </section>
+      <p class="small" style="text-align:center; margin-bottom:18px; color:rgba(23,20,15,0.56);">Pasa el ratón o toca para ver la selección del mes.</p>
 
-    <!-- Escuchando actualmente -->
-    <section>
-      <h2 class="section-title">
-        <span data-lang="es">Escuchando actualmente</span>
-        <span data-lang="en">Currently listening</span>
-      </h2>
-      <div class="item">
-        <p class="item-title">Nombre del álbum</p>
-        <p class="item-meta small">
-          <span data-lang="es">Artista · Notas sobre el disco...</span>
-          <span data-lang="en">Artist · Notes about the album...</span>
-        </p>
+      <div class="months-grid" id="monthsGrid">
+        <!-- Tiles will be rendered by JS for clarity and maintainability -->
+      </div>
+
+      <div id="monthPanel" class="month-panel" role="dialog" aria-hidden="true"></div>
+      <div id="modalBackdrop" class="modal-backdrop" aria-hidden="true">
+        <div id="monthModal" class="month-modal" role="dialog" aria-modal="true">
+          <button id="modalClose" class="modal-close" aria-label="Cerrar">✕</button>
+          <div id="monthModalContent"></div>
+        </div>
       </div>
     </section>
 
-    <!-- Libros -->
-    <section>
-      <h2 class="section-title">
-        <span data-lang="es">Libros</span>
-        <span data-lang="en">Books</span>
-      </h2>
-      <ul style="padding-left: 20px;">
-        <li><span data-lang="es">Título del libro</span><span data-lang="en">Book title</span></li>
-        <li><span data-lang="es">Otro libro</span><span data-lang="en">Another book</span></li>
+    <!-- Lecturas/Estudios importantes (entre meses y Best of the Year) -->
+    <section class="section" aria-labelledby="studies-title" style="max-width:980px;margin:8px auto 36px;padding:0 10px;">
+      <h2 id="studies-title" class="section-title">Lecturas / Estudios importantes</h2>
+      <p class="small" style="color:rgba(23,20,15,0.56);">1er semestre</p>
+      <ul style="padding-left:20px; margin-top:6px;">
+        <li>David M. Bressoud — A Radical Approach to Lebesgue's Theory of Integration — MAA Textbooks, Cambridge, 2008</li>
+        <li>Gerald B. Folland — An Introduction to Measure Theory (Graduate Studies in Mathematics, 126) — American Mathematical Society, 3 Septiembre 2021</li>
+        <li>Erwin Kreyszig — Introductory Functional Analysis with Applications — Wiley, 16 Enero 1991</li>
+        <li>Plato — Complete Works (selections), John M. Cooper & D. S. Hutchinson (eds.) — Hackett Publishing Company, 1 Mayo 1997</li>
       </ul>
     </section>
 
-    <!-- Discos / Piezas -->
-    <section>
-      <h2 class="section-title">
-        <span data-lang="es">Discos / Piezas</span>
-        <span data-lang="en">Albums / Pieces</span>
-      </h2>
-      <ul style="padding-left: 20px;">
-        <li><span data-lang="es">Artista - Álbum</span><span data-lang="en">Artist - Album</span></li>
-        <li><span data-lang="es">Otro artista - Otro álbum</span><span data-lang="en">Another artist - Another album</span></li>
-      </ul>
-    </section>
-
-    <!-- Películas vistas -->
-    <section>
-      <h2 class="section-title">
-        <span data-lang="es">Películas</span>
-        <span data-lang="en">Films</span>
-      </h2>
-      <ul style="padding-left: 20px;">
-        <li><span data-lang="es">Lola – Rainer Werner Fassbinder</span><span data-lang="en">Lola – Rainer Werner Fassbinder</span></li>
-        <li><span data-lang="es">Perfect Blue – Satoshi Kon</span><span data-lang="en">Perfect Blue – Satoshi Kon</span></li>
-        <li><span data-lang="es">East of Eden – Elia Kazan</span><span data-lang="en">East of Eden – Elia Kazan</span></li>
-        <li><span data-lang="es">Marnie – Alfred Hitchcock</span><span data-lang="en">Marnie – Alfred Hitchcock</span></li>
-      </ul>
+    <!-- BEST OF THE YEAR summary -->
+    <section class="section" aria-labelledby="best-title" style="max-width:980px;margin:6px auto 60px;padding:0 10px;">
+      <h2 id="best-title" class="section-title">BEST OF THE YEAR</h2>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:12px;">
+        <div>
+          <div class="subhead">Lecturas</div>
+          <ul style="padding-left:16px; margin-top:6px;"><li>(agrega lecturas destacadas)</li></ul>
+        </div>
+        <div>
+          <div class="subhead">Música</div>
+          <ul style="padding-left:16px; margin-top:6px;"><li>(agrega discos/piezas destacadas)</li></ul>
+        </div>
+        <div>
+          <div class="subhead">Películas</div>
+          <ul style="padding-left:16px; margin-top:6px;"><li>(agrega películas destacadas)</li></ul>
+        </div>
+      </div>
     </section>
 
   </div>
@@ -174,6 +230,181 @@
 
     // Initialize
     setLanguage("es");
+  </script>
+  <script>
+    /* Months data (March → February) - notes replaced with placeholders except marzo which is detailed */
+    const monthsData = [
+        { id: 'mar', name: 'Marzo', note: 'Previo a mi 1er semestre', books: [
+          'César Vallejo — Poesía Completa — Lumen',
+          'Conversaciones con Enrique Lihn — Pedro Lastra — Editorial UV, agosto 2020',
+          'La metamorfosis y otros relatos — Franz Kafka — Editorial Ercilla, 1985',
+          'Los libros del estudio del 1er semestre',
+          'Hartos de ensayistica'
+        ], music: [
+          'Royal Trux — Twin Infinitives',
+          'Captain Beefheart — Trout Mask Replica',
+          'Red House Painters — Down Colorful Hill',
+          'Wayne Shorter — Night Dreamer',
+          'Haydn — String Quartet in D Major, Op.20 (Sun Quartets, 1772)'
+        ], films: [
+          'Lola — Rainer Werner Fassbinder (1981)',
+          'Perfect Blue — Satoshi Kon (1997)',
+          'East of Eden — Elia Kazan (1955)',
+          'Marnie — Alfred Hitchcock (1964)'
+        ], filmNote: 'La mayoría vistas en el Cine Normandie.', booksTitle: { en: 'Books that were lying on my virtual and material desk', es: 'Libros que estuvieron en mi escritorio (virtual y material)' }, math: [
+          'Fourier Analysis: An Introduction (Princeton Lectures in Analysis, Volume 1) — Elias M. Stein; Rami Shakarchi',
+          'Fourier Series — Translated from the Russian by Richard A. Silverman — Georgi P. Tolstov; Richard A. Silverman — Dover Books on Mathematics, 1976'
+        ], mathNote: 'Más que nada, revisando las introducciones al contexto histórico de los descubrimientos de Fourier, a propósito de A Radical Approach... de Bressoud.'
+      },
+      { id: 'apr', name: 'Abril', note: '(inserta nota acá)', books: [], music: [], films: [] },
+      { id: 'may', name: 'Mayo', note: '(inserta nota acá)', books: [], music: [], films: [] },
+      { id: 'jun', name: 'Junio', note: '(inserta nota acá)', books: [], music: [], films: [] },
+      { id: 'jul', name: 'Julio', note: '(inserta nota acá)', books: [], music: [], films: [] },
+      { id: 'aug', name: 'Agosto', note: '(inserta nota acá)', books: [], music: [], films: [] },
+      { id: 'sep', name: 'Septiembre', note: '(inserta nota acá)', books: [], music: [], films: [] },
+      { id: 'oct', name: 'Octubre', note: '(inserta nota acá)', books: [], music: [], films: [] },
+      { id: 'nov', name: 'Noviembre', note: '(inserta nota acá)', books: [], music: [], films: [] },
+      { id: 'dec', name: 'Diciembre', note: '(inserta nota acá)', books: [], music: [], films: [] },
+      { id: 'jan', name: 'Enero', note: '(inserta nota acá)', books: [], music: [], films: [] },
+      { id: 'feb', name: 'Febrero', note: '(inserta nota acá)', books: [], music: [], films: [] }
+    ];
+
+    const monthsGrid = document.getElementById('monthsGrid');
+    const panel = document.getElementById('monthPanel');
+
+    function makeTile(m){
+      const btn = document.createElement('button');
+      btn.className = 'month';
+      btn.type = 'button';
+      btn.setAttribute('data-month', m.id);
+      btn.setAttribute('aria-expanded','false');
+      btn.innerHTML = `<div class="month-name">${m.name}</div><div class="month-sub">${m.note}</div>`;
+      return btn;
+    }
+
+    function renderGrid(){
+      monthsData.forEach(m=>{
+        const tile = makeTile(m);
+        monthsGrid.appendChild(tile);
+
+        // Hover (desktop)
+        tile.addEventListener('mouseenter', (e)=>{
+          showPanelFor(m, tile);
+        });
+        tile.addEventListener('mouseleave', ()=>{
+          // hide after a small delay unless focused or touched
+          setTimeout(()=>{ if(!panel.matches(':hover') && document.activeElement !== tile) hidePanel(); }, 120);
+        });
+
+        // Focus for keyboard
+        tile.addEventListener('focus', ()=> showPanelFor(m, tile));
+        tile.addEventListener('blur', ()=> hidePanel());
+
+        // Click/tap opens expanded modal (mobile and desktop)
+        tile.addEventListener('click', (e)=>{
+          showModalFor(m);
+        });
+      });
+    }
+
+    function showPanelFor(m, tile){
+      panel.innerHTML = panelTemplate(m);
+      panel.setAttribute('aria-hidden','false');
+      panel.classList.add('open');
+
+      // Position panel intelligently beside tile
+      const rect = tile.getBoundingClientRect();
+      const docRect = document.documentElement.getBoundingClientRect();
+      const rightSpace = window.innerWidth - rect.right;
+      const preferRight = rightSpace > 320;
+
+      if(preferRight){
+        panel.style.left = (rect.right + 12 + window.scrollX) + 'px';
+        panel.style.top = (rect.top + window.scrollY) + 'px';
+      } else {
+        // position above or centered when narrow
+        const left = Math.max(14 + window.scrollX, rect.left + window.scrollX - 10);
+        panel.style.left = left + 'px';
+        panel.style.top = (rect.bottom + 10 + window.scrollY) + 'px';
+      }
+    }
+
+    function hidePanel(){
+      panel.classList.remove('open');
+      panel.setAttribute('aria-hidden','true');
+      panel.innerHTML = '';
+      // reset inline position
+      panel.style.left = '';
+      panel.style.top = '';
+    }
+
+    function panelTemplate(m){
+      const lang = document.documentElement.getAttribute('data-active-lang') || 'es';
+      let booksTitle = '';
+      if(m.booksTitle){
+        if(typeof m.booksTitle === 'object') booksTitle = m.booksTitle[lang] || m.booksTitle.en || '';
+        else booksTitle = m.booksTitle;
+      }
+      if(!booksTitle) booksTitle = lang === 'es' ? 'Libros que estuvieron en mi escritorio (virtual y material)' : 'Books that were lying on my virtual and material desk';
+      const books = m.books.length ? `<div class="subhead">${escapeHtml(booksTitle)}</div><ul>${m.books.map(b=>`<li>${escapeHtml(b)}</li>`).join('')}</ul>` : '';
+      const music = m.music.length ? `<div class="subhead">Música</div><ul>${m.music.map(b=>`<li>${escapeHtml(b)}</li>`).join('')}</ul>` : '';
+      const films = m.films.length ? `<div class="subhead">Películas</div><ul>${m.films.map(b=>`<li>${escapeHtml(b)}</li>`).join('')}</ul>` : '';
+      const filmNote = m.filmNote ? `<div class="meta-note">${escapeHtml(m.filmNote)}</div>` : '';
+      const math = (m.math && m.math.length) ? `<div class="subhead">Matemáticas</div><ul>${m.math.map(x=>`<li>${escapeHtml(x)}</li>`).join('')}</ul>` : '';
+      const mathNote = m.mathNote ? `<div class="inline-note"><span class="bullet">•</span><div class="note-text">${escapeHtml(m.mathNote)}</div></div>` : '';
+      return `<h3>${m.name}</h3><p class="note">${escapeHtml(m.note)}</p>${books}${music}${films}${filmNote}${math}${mathNote}`;
+    }
+
+    function escapeHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+    // Click outside to close
+    document.addEventListener('click', (e)=>{
+      if(!panel.contains(e.target) && !e.target.closest('.month')) hidePanel();
+    });
+
+    /* Modal: expanded view */
+    const backdrop = document.getElementById('modalBackdrop');
+    const modal = document.getElementById('monthModal');
+    const modalContent = document.getElementById('monthModalContent');
+    const modalClose = document.getElementById('modalClose');
+
+    function showModalFor(m){
+      modalContent.innerHTML = modalTemplate(m);
+      backdrop.classList.add('open');
+      backdrop.setAttribute('aria-hidden','false');
+      modal.setAttribute('tabindex','-1');
+      modalClose.focus();
+    }
+
+    function hideModal(){
+      backdrop.classList.remove('open');
+      backdrop.setAttribute('aria-hidden','true');
+      modalContent.innerHTML = '';
+    }
+
+    function modalTemplate(m){
+      const lang = document.documentElement.getAttribute('data-active-lang') || 'es';
+      let booksTitle = '';
+      if(m.booksTitle){
+        if(typeof m.booksTitle === 'object') booksTitle = m.booksTitle[lang] || m.booksTitle.en || '';
+        else booksTitle = m.booksTitle;
+      }
+      if(!booksTitle) booksTitle = lang === 'es' ? 'Libros que estuvieron en mi escritorio (virtual y material)' : 'Books that were lying on my virtual and material desk';
+      const books = m.books.length ? `<div class="subhead">${escapeHtml(booksTitle)}</div><ul>${m.books.map(b=>`<li>${escapeHtml(b)}</li>`).join('')}</ul>` : '';
+      const music = m.music.length ? `<div class="subhead">Música</div><ul>${m.music.map(b=>`<li>${escapeHtml(b)}</li>`).join('')}</ul>` : '';
+      const films = m.films.length ? `<div class="subhead">Películas</div><ul>${m.films.map(b=>`<li>${escapeHtml(b)}</li>`).join('')}</ul>` : '';
+      const filmNote = m.filmNote ? `<div class="meta-note">${escapeHtml(m.filmNote)}</div>` : '';
+      const math = (m.math && m.math.length) ? `<div class="subhead">Matemáticas</div><ul>${m.math.map(x=>`<li>${escapeHtml(x)}</li>`).join('')}</ul>` : '';
+      const mathNote = m.mathNote ? `<div class="inline-note"><span class="bullet">•</span><div class="note-text">${escapeHtml(m.mathNote)}</div></div>` : '';
+      return `<h3>${m.name}</h3><p class="note">${escapeHtml(m.note)}</p>${books}${music}${films}${filmNote}${math}${mathNote}`;
+    }
+
+    modalClose.addEventListener('click', hideModal);
+    backdrop.addEventListener('click', (e)=>{ if(e.target === backdrop) hideModal(); });
+    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') hideModal(); });
+
+    // initialize
+    renderGrid();
   </script>
 </body>
 </html>
