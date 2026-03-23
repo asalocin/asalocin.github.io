@@ -34,7 +34,10 @@ var FRAME_MAP = {
   27: "pages/misc_annual_reviews.html",
 
   // 5) Blog
-  28: "pages/blog.html"
+  28: "pages/blog.html",
+
+  // 6) Lectures
+  29: "pages/lectures/2026.html"
 };
 
 // Cache-buster version. Update this value when you deploy to force
