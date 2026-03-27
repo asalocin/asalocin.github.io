@@ -1,58 +1,171 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nicolás Aguilar — Under Construction</title>
+  <title>Nicolás Aguilar — Essays and other writings</title>
   <link rel="stylesheet" href="../css/style_frame.css" type="text/css" />
 
   <style>
-    .uc { text-align: center; margin-top: 1.25rem; }
-    .uc-img{
-      display:block;
-      width:100%;
-      max-width: 720px;
-      height:auto;
-      margin: 1rem auto 0;
+    .writing-intro {
+      margin: 0 auto 1.4rem;
+      max-width: 60ch;
+      text-align: center;
+      color: var(--muted);
     }
-    .uc-note{ opacity:.8; margin-top:.75rem; }
+
+    .writing-layout {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .writing-group {
+      position: relative;
+      overflow: hidden;
+      min-height: 100%;
+      padding: 1.1rem 1.1rem 1.25rem;
+      border: 1px solid rgba(23,20,15,0.14);
+      border-radius: 18px;
+      background:
+        radial-gradient(circle at top right, rgba(30,90,168,0.08), transparent 38%),
+        linear-gradient(180deg, rgba(255,255,255,0.88), rgba(247,240,228,0.92));
+      box-shadow: 0 14px 30px rgba(23,20,15,0.08);
+    }
+
+    .writing-group::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, rgba(23,20,15,0.72), rgba(30,90,168,0.42), transparent);
+    }
+
+    .writing-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-bottom: 0.8rem;
+      font-family: var(--font-ui);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(23,20,15,0.7);
+    }
+
+    .writing-group h2 {
+      margin-top: 0;
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .writing-group h2::before {
+      content: none;
+    }
+
+    .writing-copy {
+      margin: 0 0 1rem;
+      max-width: 42ch;
+      color: var(--muted);
+    }
+
+    .writing-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      max-width: none;
+    }
+
+    .writing-list li {
+      margin: 0;
+    }
+
+    .writing-link {
+      display: block;
+      padding: 0.95rem 1rem;
+      border: 1px solid rgba(23,20,15,0.12);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.72);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+    }
+
+    .writing-link:hover {
+      transform: translateY(-2px);
+      border-color: rgba(30,90,168,0.28);
+      box-shadow: 0 12px 24px rgba(23,20,15,0.08);
+    }
+
+    .writing-link strong {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-size: 1.04rem;
+      color: var(--ink);
+    }
+
+    .writing-meta {
+      display: block;
+      font-family: var(--font-ui);
+      font-size: 12px;
+      letter-spacing: 0.02em;
+      color: rgba(23,20,15,0.62);
+    }
+
+    .writing-empty {
+      padding: 1rem;
+      border: 1px dashed rgba(23,20,15,0.2);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.45);
+      color: var(--muted);
+    }
+
+    .writing-empty p:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 760px) {
+      .writing-layout {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="page">
     <p class="kicker">Writings</p>
-    <h1>Essays</h1>
-    <p class="lede">Under construction.</p>
+    <h1>Essays and other writings</h1>
+    <p class="lede writing-intro">Mis escritos.</p>
 
-    <section class="uc" aria-label="Under construction">
-      <img class="uc-img" data-uc-file="uncon.png" alt="Under construction" />
-      <p class="small uc-note">This section is being built.</p>
+    <section class="writing-layout" aria-label="Listado de escritos">
+      <article class="writing-group">
+        <span class="writing-label">Section I</span>
+        <h2>Essays</h2>
+        <p class="writing-copy">Textos de mayor aliento.</p>
+
+        <div class="writing-empty">
+          <p class="small">Próximamente.</p>
+          <p>Esta sección irá reuniendo ensayos cuando estén listos para publicación.</p>
+        </div>
+      </article>
+
+      <article class="writing-group">
+        <span class="writing-label">Section II</span>
+        <h2>Other writings</h2>
+        <p class="writing-copy">Otros escritos.</p>
+
+        <ul class="writing-list">
+          <li>
+            <a class="writing-link" href="Essays/mark-zuckerberg-carta-al-director.html">
+              <strong>Mark Zuckerberg [carta al director, El Mercurio]</strong>
+              <span class="writing-meta">Carta al director · Enviado el 26/03/26</span>
+            </a>
+          </li>
+        </ul>
+      </article>
     </section>
   </div>
-
-  <script>
-    (function () {
-      const imgs = document.querySelectorAll("img[data-uc-file]");
-      imgs.forEach(img => {
-        const file = img.getAttribute("data-uc-file") || "uncon.png";
-        const candidates = [
-          `/img/${file}`,
-          `img/${file}`,
-          `../img/${file}`,
-          `../../img/${file}`,
-          `../../../img/${file}`,
-        ];
-
-        let i = 0;
-        function tryNext() {
-          if (i >= candidates.length) return;
-          img.src = candidates[i++];
-        }
-
-        img.addEventListener("error", tryNext);
-        tryNext();
-      });
-    })();
-  </script>
 </body>
 </html>
