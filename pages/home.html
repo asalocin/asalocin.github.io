@@ -34,60 +34,44 @@
       <button id="langToggle" class="lang-toggle" type="button">Spanish</button>
     </div>
 
-    <p class="kicker" data-i18n="kicker">This page is still under construction!</p>
-    <h1 data-i18n="homeTitle">Home</h1>
-    <p class="lede" data-i18n="lede">Hi! - I’m Nicolás, and this is my personal website.</p>
+    <p class="kicker" data-i18n="kicker"></p>
+    <h1 data-i18n="homeTitle"></h1>
+    <p class="lede" data-i18n="lede"></p>
 
     <div class="two-col">
       <div class="main">
-        <h2 data-i18n="aboutTitle">About this site</h2>
+        <h2 data-i18n="aboutTitle"></h2>
 
-        <p data-i18n-html="aboutP1">
-          I’m a Mathematical Engineering student. Right now I’m mostly interested on understanding
-          <b>Measure Theory</b>.
-        </p>
+        <p data-i18n-html="aboutP1"></p>
 
-        <p data-i18n-html="aboutP2">
-          This website is my little place on the internet: a corner to keep track of projects and share what I’m working on.
-        </p>
+        <p data-i18n-html="aboutP2"></p>
 
-        <h2 data-i18n="educationTitle">Education</h2>
-        <p data-i18n-html="educationP">
-          Mathematical Engineering ≈ Math major with an engineering mention<br>
-          Universidad de Santiago de Chile (USACH), 2022–2028 (in progress).
-        </p>
+        <h2 data-i18n="educationTitle"></h2>
+        <p data-i18n-html="educationP"></p>
 
-        <h2 data-i18n="interestsTitle">Current interests</h2>
+        <h2 data-i18n="interestsTitle"></h2>
         <ul>
-          <li data-i18n-html="interestMath"><b>Math:</b> Measure theory, probability.</li>
-          <li data-i18n-html="interestOther"><b>Other:</b> <b>Others:</b> Also interested on Music, Literature, cinema, meeting new people, weight lifting.</li>
+          <li data-i18n-html="interestMath"></li>
+          <li data-i18n-html="interestOther"></li>
         </ul>
 
-        <h2 data-i18n="contactTitle">Contact</h2>
-        <p data-i18n-html="contactP">
-          I'm always eager to meet new people. If you happen to be here and want to reach out, you can write me at:
-          <br>Uni email: <span class="small">nicolas.aguilar.m@usach.cl</span>
-          <br>Personal: <span class="small">nicolasal.aguilarm@gmail.com</span>
-        </p>
+        <h2 data-i18n="contactTitle"></h2>
+        <p data-i18n-html="contactP"></p>
       </div>
 
       <aside class="side">
         <div class="card">
-          <img class="portrait" src="../img/portrait_placeholder.png" data-i18n-alt="portraitAlt" alt="Portrait photo" />
-          <p class="note" data-i18n-html="elsewhereNote">
-            Elsewhere:
-              Elsewhere: (under construction)
-            </p>
+          <img class="portrait" src="../img/portrait_placeholder.png" data-i18n-alt="portraitAlt" alt="" />
+          <p class="note" data-i18n-html="elsewhereNote"></p>
           <hr class="hr" />
-          <p class="small" data-i18n-html="tip">
-            Tip: use the menu above to explore <b>Writings</b>, <b>Music</b>, <b>Miscellaneous</b> and the <b>Blog</b>.
-          </p>
+          <p class="small" data-i18n-html="tip"></p>
         </div>
       </aside>
     </div>
   </div>
 
   <script>
+    // Edita los textos aqui: cada clave aparece una sola vez por idioma.
     const i18n = {
       en: {
         _htmlLang: "en",
@@ -110,7 +94,7 @@
 
         interestsTitle: "Current interests",
         interestMath: "<b>Math:</b> Measure theory, probability.",
-        interestOther: "<b>Others:</b> Also interested on Music, Literature, cinema, meeting new people, weight lifting.",
+        interestOther: "<b>Others:</b> Also interested on Music, Literature, cinema, among other things.",
 
         contactTitle: "Contact",
         contactP: `I'm always eager to meet new people. If you happen to be here and want to reach out, you can write me at:
@@ -144,10 +128,10 @@
 
         interestsTitle: "Intereses actuales",
         interestMath: "<b>Matemáticas:</b> Teoría de la medida, probabilidad.",
-        interestOther: "<b>Otros:</b> También me interesa la Música, la Literatura, el cine, conocer gente nueva, etc.",
+        interestOther: "<b>Otros:</b> También me interesa la Música, la Literatura, el cine, entre otros.",
 
         contactTitle: "Contacto",
-        contactP: `Siempre me encanta conocer gente nueva. Si estás por aquí y quieres comunicarte conmigo, puedes escribirme a:
+        contactP: `Me apasiona conocer gente que haga cosas interesantes. Si estás por aquí y quieres comunicarte conmigo, puedes escribirme a:
                    <br>Email universidad: <span class=\"small\">nicolas.aguilar.m@usach.cl</span>
                    <br>Personal: <span class=\"small\">nicolasal.aguilarm@gmail.com</span>`,
 
