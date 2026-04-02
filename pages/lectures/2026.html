@@ -18,6 +18,10 @@
     .course h3{margin:0 0 6px 0;color:var(--accent)}
     .course p{margin:0;color:var(--muted)}
     .link{display:inline-block;margin-top:10px;padding:8px 12px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none}
+    .cloud-note{margin-top:18px;background:linear-gradient(135deg,#ffffff 0%,#eef5fb 100%);border:1px solid rgba(31,59,87,0.15);padding:16px 18px;border-radius:18px;box-shadow:0 10px 24px rgba(16,24,40,0.08);position:relative}
+    .cloud-note:after{content:'';position:absolute;left:36px;bottom:-11px;width:22px;height:22px;background:#f0f6fc;border-right:1px solid rgba(31,59,87,0.15);border-bottom:1px solid rgba(31,59,87,0.15);transform:rotate(45deg)}
+    .cloud-note h2{margin:0 0 6px 0;color:var(--accent);font-size:1.1rem}
+    .cloud-note p{margin:0;color:var(--muted);line-height:1.45}
     footer{margin-top:28px;color:var(--muted);text-align:center;font-size:0.95rem}
     @media (max-width:520px){.container{padding:12px}}
   </style>
@@ -35,6 +39,11 @@
       </div>
     </header>
 
+    <section class="cloud-note" aria-label="Mensaje destacado">
+      <h2>Aviso general 2026</h2>
+      <p>Este espacio queda disponible para mensajes del semestre: cambios de horario, comunicados importantes o indicaciones para todas las ayudantias.</p>
+    </section>
+
     <!-- Tarjetas por curso: agregar una por cada asignatura/ayudantía -->
     <section aria-labelledby="cursos" style="margin-top:18px">
       <h2 id="cursos" style="margin:0 0 8px 0">Cursos / Ayudantías (2026)</h2>
@@ -42,109 +51,9 @@
         <article class="course">
           <h3>Matemáticas III — Facultad de Biología y Química</h3>
           <p>Ayudantía: apuntes, ejercicios y anuncios. Incluye sesiones en vivo y material semanal.</p>
-          <a class="link" href="#matematicas-iii">Ver material</a>
-        </article>
-
-        <article class="course">
-          <h3>Física I — Facultad de Ciencias</h3>
-          <p>Resumen, prácticas y recursos complementarios. (Entrada de ejemplo)</p>
-          <a class="link" href="#fisica-i">Ver material</a>
-        </article>
-
-        <article class="course">
-          <h3>Programación Científica — Taller</h3>
-          <p>Laboratorios, guías y repositorio de código. (Entrada de ejemplo)</p>
-          <a class="link" href="#prog-cientifica">Ver material</a>
+          <a class="link" href="./matematicas-iii/index.html">Ver material</a>
         </article>
       </div>
-    </section>
-
-    <!-- Sección detallada: aquí movemos el contenido previamente en esta página -->
-    <!-- Curso: Matemáticas III - Facultad de Biología y Química -->
-    <section id="matematicas-iii" aria-labelledby="mat3" style="margin-top:28px">
-      <h2 id="mat3">Matemáticas III - Facultad de Biología y Química</h2>
-      <p class="intro" style="color:var(--muted)">Página de ayudantía: anuncios, material por semana, próxima sesión y FAQ.</p>
-
-      <!-- BEGIN: Contenido trasladado desde la versión previa de esta página. -->
-      <div style="margin-top:12px;display:grid;grid-template-columns:1fr;gap:14px">
-        <!-- Anuncios -->
-        <section style="background:var(--card);padding:14px;border-radius:10px;box-shadow:0 6px 18px rgba(16,24,40,0.06)" aria-labelledby="anuncios-mat3">
-          <h3 id="anuncios-mat3">Anuncios</h3>
-          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px">
-            <li style="background:#fff;padding:10px;border-radius:8px">
-              <div style="display:flex;justify-content:space-between;align-items:center">
-                <div>
-                  <strong>Entrega de primera tarea — fecha límite</strong>
-                  <div style="color:var(--muted);font-size:0.95rem">Vence: 10 de abril — subir en Aula</div>
-                </div>
-                <div style="color:#b91c1c;font-weight:700">Importante</div>
-              </div>
-              <p style="color:var(--muted)">Revisen las instrucciones y los ejemplos en la sección 'Tarea' del material de la semana 2.</p>
-            </li>
-
-            <li style="background:#fff;padding:10px;border-radius:8px">
-              <div style="display:flex;justify-content:space-between;align-items:center">
-                <div>
-                  <strong>Horario de ayudantía</strong>
-                  <div style="color:var(--muted);font-size:0.95rem">Miércoles 16:00—18:00, Sala 204</div>
-                </div>
-                <div style="color:#0b7a5a;font-weight:700">Nuevo</div>
-              </div>
-              <p style="color:var(--muted)">Se agregó una sesión adicional el jueves 18:00 para consultas.</p>
-            </li>
-          </ul>
-        </section>
-
-        <!-- Material por semana: tarjetas compactas -->
-        <section style="background:var(--card);padding:14px;border-radius:10px;box-shadow:0 6px 18px rgba(16,24,40,0.06)" aria-labelledby="semanas-mat3">
-          <h3 id="semanas-mat3">Clases / Semanas</h3>
-          <p style="color:var(--muted);margin-top:4px">Cada entrada contiene enlaces rápidos a apuntes, guías y ejercicios.</p>
-          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:10px">
-            <article style="background:#fff;padding:10px;border-radius:8px">
-              <strong>Semana 1 — Introducción y repaso</strong>
-              <div style="color:var(--muted);font-size:0.95rem">3—7 marzo</div>
-              <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
-                <a style="padding:6px 8px;border-radius:8px;border:1px solid rgba(31,59,87,0.08);text-decoration:none;color:#2b6f95" href="#">Apuntes</a>
-                <a style="padding:6px 8px;border-radius:8px;border:1px solid rgba(31,59,87,0.08);text-decoration:none;color:#2b6f95" href="#">Guía</a>
-                <a style="padding:6px 8px;border-radius:8px;border:1px solid rgba(31,59,87,0.08);text-decoration:none;color:#2b6f95" href="#">Ejercicios</a>
-                <span style="margin-left:auto;color:#0b7a5a;font-weight:700">Nuevo</span>
-              </div>
-            </article>
-
-            <article style="background:#fff;padding:10px;border-radius:8px">
-              <strong>Semana 2 — Técnicas avanzadas</strong>
-              <div style="color:var(--muted);font-size:0.95rem">10—14 marzo</div>
-              <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
-                <a style="padding:6px 8px;border-radius:8px;border:1px solid rgba(31,59,87,0.08);text-decoration:none;color:#2b6f95" href="#">Apuntes</a>
-                <a style="padding:6px 8px;border-radius:8px;border:1px solid rgba(31,59,87,0.08);text-decoration:none;color:#2b6f95" href="#">Ejercicios</a>
-                <a style="padding:6px 8px;border-radius:8px;border:1px solid rgba(31,59,87,0.08);text-decoration:none;color:#2b6f95" href="#">Soluciones</a>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <!-- Próxima sesión y FAQ -->
-        <section style="display:grid;grid-template-columns:1fr;gap:12px">
-          <div style="background:var(--card);padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(16,24,40,0.06)">
-            <h3>Próxima sesión</h3>
-            <div style="color:var(--muted)">Martes 31 de marzo — 14:00 — Aula virtual (Zoom)</div>
-            <div style="margin-top:8px"><a class="link" href="#">Ir a la reunión</a></div>
-          </div>
-
-          <div style="background:var(--card);padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(16,24,40,0.06)">
-            <h3>Preguntas frecuentes</h3>
-            <dl style="margin:0;color:var(--muted)">
-              <dt style="font-weight:700;margin-top:6px">¿Dónde subo las tareas?</dt>
-              <dd>En la plataforma del curso (Aula). Revisar fecha en anuncios.</dd>
-              <dt style="font-weight:700;margin-top:6px">¿Puedo revisar soluciones?</dt>
-              <dd>Se publican una semana después de la entrega.</dd>
-            </dl>
-          </div>
-        </section>
-      </div>
-      <!-- END: Contenido trasladado -->
-
-      <p style="color:var(--muted);margin-top:14px;font-size:0.95rem">Nota de mantenimiento: para actualizar semanas o anuncios, edite la sección con id <code>matematicas-iii</code> en este archivo.</p>
     </section>
 
     <footer>

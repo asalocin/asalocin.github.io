@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Matematicas III - Lectures 2026</title>
+  <link rel="stylesheet" href="../../../css/style_frame.css" type="text/css" />
+  <style>
+    :root{--bg:#f7f8fb;--card:#fff;--muted:#6b7280;--accent:#1f3b57;--gap:14px;--radius:10px;--maxw:1100px}
+    html,body{margin:0;padding:0;background:var(--bg);font-family:system-ui,-apple-system,'Segoe UI',Roboto,Arial;color:#111}
+    .container{max-width:var(--maxw);margin:28px auto;padding:18px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    header h1{margin:0;color:var(--accent)}
+    .intro{color:var(--muted);margin-top:6px}
+    .toolbar{display:flex;gap:8px;flex-wrap:wrap}
+    .link{display:inline-block;padding:8px 12px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none}
+    .panel{background:var(--card);padding:14px;border-radius:10px;box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+    .week-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:10px}
+    .week-card{background:#fff;padding:10px;border-radius:8px}
+    .chip-link{padding:6px 8px;border-radius:8px;border:1px solid rgba(31,59,87,0.08);text-decoration:none;color:#2b6f95}
+    footer{margin-top:28px;color:var(--muted);text-align:center;font-size:0.95rem}
+    @media (max-width:520px){.container{padding:12px}}
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <div>
+        <h1>Matematicas III - Facultad de Biologia y Quimica</h1>
+        <div class="intro">Pagina de ayudantia: anuncios, material por semana, proxima sesion y FAQ.</div>
+      </div>
+      <nav class="toolbar" aria-label="Navegacion">
+        <a class="link" href="../2026.html">Volver a Lectures 2026</a>
+        <a class="link" href="../../home.html">Volver al sitio</a>
+      </nav>
+    </header>
+
+    <div style="margin-top:12px;display:grid;grid-template-columns:1fr;gap:var(--gap)">
+      <section class="panel" aria-labelledby="anuncios-mat3">
+        <h2 id="anuncios-mat3" style="margin-top:0">Anuncios</h2>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px">
+          <li style="background:#fff;padding:10px;border-radius:8px">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
+              <div>
+                <strong>Entrega de primera tarea - fecha limite</strong>
+                <div style="color:var(--muted);font-size:0.95rem">Vence: 10 de abril - subir en Aula</div>
+              </div>
+              <div style="color:#b91c1c;font-weight:700">Importante</div>
+            </div>
+            <p style="color:var(--muted)">Revisen las instrucciones y los ejemplos en la seccion Tarea del material de la semana 2.</p>
+          </li>
+
+          <li style="background:#fff;padding:10px;border-radius:8px">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
+              <div>
+                <strong>Horario de ayudantia</strong>
+                <div style="color:var(--muted);font-size:0.95rem">Miercoles 16:00-18:00, Sala 204</div>
+              </div>
+              <div style="color:#0b7a5a;font-weight:700">Nuevo</div>
+            </div>
+            <p style="color:var(--muted)">Se agrego una sesion adicional el jueves 18:00 para consultas.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="panel" aria-labelledby="semanas-mat3">
+        <h2 id="semanas-mat3" style="margin-top:0">Clases / Semanas</h2>
+        <p style="color:var(--muted);margin-top:4px">Cada entrada contiene enlaces rapidos a apuntes, guias y ejercicios.</p>
+        <div class="week-grid">
+          <article class="week-card">
+            <strong>Semana 1 - Introduccion y repaso</strong>
+            <div style="color:var(--muted);font-size:0.95rem">3-7 marzo</div>
+            <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
+              <a class="chip-link" href="#">Apuntes</a>
+              <a class="chip-link" href="#">Guia</a>
+              <a class="chip-link" href="#">Ejercicios</a>
+              <span style="margin-left:auto;color:#0b7a5a;font-weight:700">Nuevo</span>
+            </div>
+          </article>
+
+          <article class="week-card">
+            <strong>Semana 2 - Tecnicas avanzadas</strong>
+            <div style="color:var(--muted);font-size:0.95rem">10-14 marzo</div>
+            <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
+              <a class="chip-link" href="#">Apuntes</a>
+              <a class="chip-link" href="#">Ejercicios</a>
+              <a class="chip-link" href="#">Soluciones</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section style="display:grid;grid-template-columns:1fr;gap:12px">
+        <div class="panel">
+          <h2 style="margin-top:0">Proxima sesion</h2>
+          <div style="color:var(--muted)">Martes 31 de marzo - 14:00 - Aula virtual (Zoom)</div>
+          <div style="margin-top:8px"><a class="link" href="#">Ir a la reunion</a></div>
+        </div>
+
+        <div class="panel">
+          <h2 style="margin-top:0">Preguntas frecuentes</h2>
+          <dl style="margin:0;color:var(--muted)">
+            <dt style="font-weight:700;margin-top:6px">Donde subo las tareas?</dt>
+            <dd>En la plataforma del curso (Aula). Revisar fecha en anuncios.</dd>
+            <dt style="font-weight:700;margin-top:6px">Puedo revisar soluciones?</dt>
+            <dd>Se publican una semana despues de la entrega.</dd>
+          </dl>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <p>Contacto: profesor@example.edu - Ayudante: ayudante@example.edu</p>
+      <p style="color:var(--muted);margin-top:6px">Ultima actualizacion: 26 de marzo de 2026</p>
+    </footer>
+  </main>
+</body>
+</html>
