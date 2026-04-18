@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Friedrich Nietzsche — Zarathustras Mitternachtslied</title>
+  <link rel="stylesheet" href="../../css/style_frame.css" type="text/css" />
+
+  <style>
+    .meta-row{ display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin: 6px 0 0; }
+    .controls{ display:flex; flex-wrap:wrap; gap:8px; }
+    .btn{
+      appearance: none;
+      border: 1px solid rgba(23,20,15,0.22);
+      background: rgba(255,255,255,0.55);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-family: var(--font-ui);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(23,20,15,0.78);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn:hover{ border-color: rgba(23,20,15,0.35); }
+    .btn:active{ transform: translateY(1px); }
+    .btn.is-active{
+      border-color: rgba(23,20,15,0.42);
+      box-shadow: inset 0 0 0 1px rgba(23,20,15,0.12);
+    }
+
+    .poem-block{ margin-top: 12px; }
+    .poem-body{ max-width: var(--measure); }
+    .poem-body .stanza{ margin-bottom: 24px; }
+
+    .stanza-num{
+      font-family: var(--font-ui);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(23,20,15,0.60);
+      margin-bottom: 4px;
+    }
+
+    .poem-lines{
+      margin: 0;
+      white-space: pre-wrap;
+    }
+
+    .lang{ display: none; }
+    .lang.is-visible{ display: block; }
+
+    .liminar{ margin-top: 0; }
+    .liminar summary{ list-style: none; }
+    .liminar summary::-webkit-details-marker{ display: none; }
+    .liminar-copy{ margin-top: 12px; }
+
+    .author-figure{ margin: 0 0 10px; max-width: 260px; }
+    .author-figure img{
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 14px;
+      border: 1px solid rgba(23,20,15,0.14);
+    }
+    .author-figure figcaption{ margin-top: 6px; opacity: 0.85; }
+
+    .credit{ margin-top: 14px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <p class="kicker"><a href="../misc_poetry_anthology.html">Personal Anthology of Poetry</a></p>
+    <h1>Zarathustras Mitternachtslied</h1>
+    <p class="lede">
+      Friedrich Nietzsche (1844-1900). <span class="mono">Also sprach Zarathustra</span>, cuarta parte, <span class="mono">Das Nachtwandler-Lied</span>, § 12.
+    </p>
+
+    <div class="meta-row" aria-label="Entry tags">
+      <span class="badge">XIX c.</span>
+      <span class="badge">German</span>
+      <span class="badge">bilingual text</span>
+      <span class="badge">philosophical lyric</span>
+    </div>
+
+    <div class="two-col">
+      <aside class="side">
+        <div class="card">
+          <figure class="author-figure">
+            <img src="authors/NIT.jpg" alt="Friedrich Nietzsche — retrato" loading="lazy">
+            <figcaption class="small">Friedrich Nietzsche (1844-1900)</figcaption>
+          </figure>
+
+          <div class="hr"></div>
+
+          <h2>Controls</h2>
+          <p class="small">Idiomas disponibles:</p>
+          <div class="controls" role="tablist" aria-label="Language toggle">
+            <button class="btn is-active" id="btn-es" type="button" role="tab" aria-selected="true">ES (traducción)</button>
+            <button class="btn" id="btn-de" type="button" role="tab" aria-selected="false">DE</button>
+          </div>
+          <div class="hr"></div>
+          <h2>Navigation</h2>
+          <p class="small"><a class="btn" href="../misc_poetry_anthology.html">← Back to anthology</a></p>
+          <p class="small"><a class="btn" href="../Poetry.html">Poetry (Writings)</a></p>
+          <div class="hr"></div>
+          <h2>Azar</h2>
+          <p class="small">Para ir a una página aleatoria, pinche aquí:</p>
+          <button class="btn" id="btn-random" type="button">Surprise me</button>
+        </div>
+      </aside>
+
+      <main class="main">
+        <section class="card poem-block">
+          <h2>Poema</h2>
+          <details class="liminar">
+            <summary class="btn" type="button">Nota omitible</summary>
+            <div class="liminar-copy">
+              <p class="small" style="margin-top:0;">Nunca leí Así Habló Zaratustra, pero a propósito de la Sinfonía n.º 3 en re menor, Cuarto Movimiento de Mahler, les traigo este bello fragmento:</p>
+            </div>
+          </details>
+
+          <div class="lang is-visible" id="lang-es" role="tabpanel" aria-labelledby="btn-es">
+            <div class="poem-body">
+              <div class="stanza">
+                <div class="stanza-num">I</div>
+                <div class="poem-lines">¡Oh, Hombre! ¡Presta atención!
+¿Qué dice la profunda noche?
+¡Yo dormía!
+¡Me desperté de un sueño profundo!
+¡El Mundo es profundo!
+¡Y más profundo de lo que el día recuerda!</div>
+              </div>
+
+              <div class="stanza">
+                <div class="stanza-num">II</div>
+                <div class="poem-lines">¡Oh, Hombre! ¡Presta atención!
+¡Profundo es tu sufrimiento!
+¡La alegría es más profunda que la pena!
+El sufrir habla:¡Desaparece!
+Pero toda alegría busca la eternidad,
+¡Una eternidad profunda, profunda eternidad!</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lang" id="lang-de" role="tabpanel" aria-labelledby="btn-de">
+            <div class="poem-body">
+              <div class="stanza">
+                <div class="stanza-num">I</div>
+                <div class="poem-lines">O Mensch! Gib acht!
+Was spricht die tiefe Mitternacht?
+Ich schlief!
+Aus tiefem Traum bin ich erwacht!
+Die Welt ist tief!
+Und tiefer als der Tag gedacht!</div>
+              </div>
+
+              <div class="stanza">
+                <div class="stanza-num">II</div>
+                <div class="poem-lines">O Mensch! Gib acht!
+Tief ist ihr Weh!
+Lust tiefer noch als Herzeleid!
+Weh spricht: Vergeh!
+Doch alle Lust will Ewigkeit!
+Will tiefe, tiefe Ewigkeit!</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hr"></div>
+          <p class="small credit">
+            <b>Credit / source note:</b>
+            Fragmento de <span class="mono">Also sprach Zarathustra</span> de Friedrich Nietzsche. Texto original en alemán y traducción al español incorporados según el texto proporcionado.
+          </p>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    var btnEs = document.getElementById("btn-es");
+    var btnDe = document.getElementById("btn-de");
+    var langEs = document.getElementById("lang-es");
+    var langDe = document.getElementById("lang-de");
+
+    function showLang(which){
+      if(which === "de"){
+        langEs.classList.remove("is-visible");
+        langDe.classList.add("is-visible");
+        btnEs.classList.remove("is-active");
+        btnDe.classList.add("is-active");
+      }else{
+        langDe.classList.remove("is-visible");
+        langEs.classList.add("is-visible");
+        btnDe.classList.remove("is-active");
+        btnEs.classList.add("is-active");
+      }
+    }
+
+    btnEs.addEventListener("click", function(){ showLang("es"); });
+    btnDe.addEventListener("click", function(){ showLang("de"); });
+
+    var btnRand = document.getElementById("btn-random");
+    if(btnRand){
+      btnRand.addEventListener("click", function(){
+        alert("This would link to another poem in your collection.");
+      });
+    }
+  </script>
+</body>
+</html>
